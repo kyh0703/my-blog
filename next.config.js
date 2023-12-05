@@ -1,4 +1,5 @@
-const withTwin = require('./withTwin');
+const withTwin = require('./withTwin')
+const withMDX = require('@next/mdx')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withTwin({
@@ -11,8 +12,8 @@ const nextConfig = withTwin({
         // http://localhost:8000
         destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/:path*`,
       },
-    ];
+    ]
   },
-});
+})
 
-module.exports = nextConfig;
+module.exports = nextConfig
