@@ -25,15 +25,19 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ],
     }
   },
   "include": [
     "next-env.d.ts",
-    ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "types"
+    ".next/types/**/*.ts",
+    "src/types",
+    ".contentlayer/generated"
   ],
   "exclude": [
     "node_modules"

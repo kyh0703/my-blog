@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import tw, { styled, css } from 'twin.macro'
 
 import { CloseIcon } from '@/components/atoms/Icon'

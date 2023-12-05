@@ -1,19 +1,14 @@
 const withTwin = require('./withTwin')
-const withMDX = require('@next/mdx')
+const { withContentlayer } = require('next-contentlayer')
 
 /** @type {import('next').NextConfig} */
-const nextConfig = withTwin({
-  reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        // ex. /api/proxy
-        source: `${process.env.NEXT_PUBLIC_API_BASE_PATH}/:path*`,
-        // http://localhost:8000
-        destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/:path*`,
-      },
-    ]
-  },
-})
+const nextConfig = withTwin(
+  withContentlayer({
+    // Configure 'pageExtensions' to include MDX files
+    pageExtensions: ['js', 'jsx', 'mdx', 'tx', 'tsx'],
+    // Optionally, add any other Next.js config below
+    reactStrictMode: true,
+  }),
+)
 
 module.exports = nextConfig
