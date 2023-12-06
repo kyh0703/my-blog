@@ -1,8 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import tw, { styled } from 'twin.macro'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { getMDXComponent } from 'next-contentlayer/hooks'
 import { allPosts, Post } from 'contentlayer/generated'
