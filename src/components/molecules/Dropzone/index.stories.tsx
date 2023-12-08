@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Meta, StoryObj } from '@storybook/react'
 import React, { useState, useEffect } from 'react'
 import Button from '@/components/atoms/Button'
@@ -65,7 +66,7 @@ export const WithControl: Story = {
     acceptedFileTypes: ['image/png', 'image/jpeg', 'image/jpg', 'image/gif'],
     hasError: false,
   },
-  render: args => {
+  render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [files, setFiles] = useState<File[]>([])
     const handleDrop = (files: File[]) => {
@@ -103,11 +104,11 @@ export const WithControl: Story = {
         </div>
         <div>
           {files.map((f, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={URL.createObjectURL(f)}
-              width="100px"
+            <Image
               key={i}
+              width={100}
+              height={100}
+              src={URL.createObjectURL(f)}
               alt="sample"
             />
           ))}

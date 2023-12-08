@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
-import { colors, letterSpacings } from './src/themes';
+import type { Config } from 'tailwindcss'
+import { colors, letterSpacings } from './src/themes'
 
 const config: Config = {
   content: [
@@ -14,5 +14,5 @@ const config: Config = {
   },
   corePlugins: { preflight: false },
   plugins: [require('@tailwindcss/typography')],
-};
-export default config;
+}
+export default config
