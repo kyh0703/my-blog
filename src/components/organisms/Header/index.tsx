@@ -1,48 +1,36 @@
 import Link from 'next/link'
-import tw, { styled, css, theme } from 'twin.macro'
+import tw, { styled, css } from 'twin.macro'
 
 import Button from '@/components/atoms/Button'
+import { LightModeIcon, DarkModeIcon } from '@/components/atoms/Icon'
 
-const HeaderRoot = styled.header(tw`h-[88px]`)
+const HeaderRoot = styled.header([
+  tw`h-[88px] border-none`,
+  tw`border-b border-solid border-border`,
+])
 
 const Nav = styled.div([
-  tw`flex items-center`,
+  tw`flex h-[56px] items-center`,
   css`
-    height: 56px;
     & > span:not(:first-child) {
+      margin-left: 8px;
     }
   `,
 ])
 
-const NavLink = styled.span(tw`inline`)
+const NavLink = styled.span([tw`inline pr-2 text-2xl`])
 
-const Anchor = styled.span(tw`cursor-pointer hover:text-[#5670e1]`)
-
+const Anchor = styled.span([tw`cursor-pointer hover:text-[#570e1]`])
 const Header = () => {
   return (
     <HeaderRoot>
-      <div tw="flex pl-1 pr-1 justify-between">
-        <Nav as="nav">
-          <NavLink>
-            <Link href="/">
-              <Anchor>{/* TODO LOGO */}</Anchor>
-            </Link>
-          </NavLink>
-        </Nav>
-        <Nav as="nav"></Nav>
-        <Nav as="nav">
-          <NavLink>
-            <Link href="/">
-              <Anchor as="a">Home</Anchor>
-            </Link>
-          </NavLink>
-          <NavLink>
-            <div tw="block">
-              <Link href="/">
-                <Anchor as="a">Blog</Anchor>
-              </Link>
-            </div>
-          </NavLink>
+      <div tw="flex justify-between pl-1 pr-1">
+        <Nav>{/* AppLogo */}</Nav>
+        <Nav>
+          <NavLink>Home</NavLink>
+          <NavLink>Blog</NavLink>
+          <NavLink>About</NavLink>
+          <DarkModeIcon size={30} />
         </Nav>
       </div>
     </HeaderRoot>

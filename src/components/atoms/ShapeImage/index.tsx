@@ -1,20 +1,16 @@
 import Image, { ImageProps } from 'next/image'
+import tw, { styled, css } from 'twin.macro'
 
 type ImageShape = 'circle' | 'square'
 type ShapeImageProps = ImageProps & { shape?: ImageShape }
 
+const ImageWithShape = styled(Image)<{ shape?: ImageShape }>(({ shape }) => [
+  shape === 'circle' ? tw`rounded-full` : tw`rounded-none`,
+])
+
 const ShapeImage = (props: ShapeImageProps) => {
-  const { shape, src, alt, ...imageProps } = props
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      className={`
-        ${shape === 'circle' && 'rounded-full'}
-      `}
-      {...imageProps}
-    />
-  )
+  const { shape, ...imageProps } = props
+  return <ImageWithShape shape={shape} {...imageProps} />
 }
 
 export default ShapeImage
