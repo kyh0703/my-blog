@@ -9,6 +9,10 @@ import {
   GoogleIcon,
   DarkModeIcon,
   LightModeIcon,
+  EmojiPeopleIcon,
+  AccountBoxRounedIcon,
+  LinkedInIcon,
+  EmailIcon,
 } from '.'
 
 const meta: Meta<typeof SearchIcon> = {
@@ -61,6 +65,10 @@ export const Normal: Story = {
       <FacebookIcon {...args} />
       <DarkModeIcon {...args} />
       <LightModeIcon {...args} />
+      <EmojiPeopleIcon {...args} />
+      <AccountBoxRounedIcon {...args} />
+      <LinkedInIcon {...args} />
+      <EmailIcon {...args} />
     </>
   ),
 }

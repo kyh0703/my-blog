@@ -13,6 +13,10 @@ import {
   Google,
   DarkMode,
   LightMode,
+  EmojiPeople,
+  AccountBoxRounded,
+  LinkedIn,
+  Email,
 } from '@mui/icons-material'
 import SvgIcon from '@mui/material/SvgIcon'
 import tw, { styled, css } from 'twin.macro'
@@ -87,3 +91,7 @@ export const PersonOutlineIcon = withIconStyle(PersonOutline)
 export const ShoppingCartIcon = withIconStyle(ShoppingCart)
 export const DarkModeIcon = withIconStyle(DarkMode)
 export const LightModeIcon = withIconStyle(LightMode)
+export const EmojiPeopleIcon = withIconStyle(EmojiPeople)
+export const AccountBoxRounedIcon = withIconStyle(AccountBoxRounded)
+export const LinkedInIcon = withIconStyle(LinkedIn)
+export const EmailIcon = withIconStyle(Email)
