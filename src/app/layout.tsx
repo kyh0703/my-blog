@@ -1,11 +1,7 @@
 'use client'
 
-import { Inter } from 'next/font/google'
-
-import Header from '@/components/organisms/Header'
-import '@/styles/globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import GlobalStyles from '@/styles/GlobalStyles'
+import Layout from '@/components/templates/Layout'
 
 export default function RootLayout({
   children,
@@ -18,8 +14,8 @@ export default function RootLayout({
         <title>Contentlayer Next.js Example</title>
       </head>
       <body>
-        <Header />
-        <div tw="px-6">{children}</div>
+        <GlobalStyles />
+        <Layout>{children}</Layout>
       </body>
     </html>
   )

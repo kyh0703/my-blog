@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import tw, { styled, css } from 'twin.macro'
 
-import Button from '@/components/atoms/Button'
-import { LightModeIcon, DarkModeIcon } from '@/components/atoms/Icon'
-import Separator from '@/components/atoms/Separator'
+import {
+  LightModeIcon,
+  DarkModeIcon,
+  EmojiPeopleIcon,
+} from '@/components/atoms/Icon'
 
-const HeaderRoot = styled.header([tw`h-[88px] border-none`])
+const HeaderRoot = styled.header([tw`h-[56px] border-none`])
 
 const Nav = styled.div([
-  tw`flex h-[56px] items-center`,
+  tw`flex h-[56px] items-center text-base`,
   css`
     & > span:not(:first-child) {
       margin-left: 8px;
@@ -18,22 +20,19 @@ const Nav = styled.div([
 
 const NavLink = styled.span([tw`inline pr-2 text-xl cursor-pointer`])
 
-const Anchor = styled.span([tw`cursor-pointer hover:text-[#570e1]`])
 const Header = () => {
   return (
     <HeaderRoot>
       <div tw="flex justify-between pl-1 pr-1">
-        <Nav>{/* AppLogo */}</Nav>
         <Nav>
           <NavLink>Blog</NavLink>
           <NavLink>Categories</NavLink>
-          <NavLink>About</NavLink>
         </Nav>
         <Nav>
-          <DarkModeIcon size={25} />
+          <EmojiPeopleIcon size={26} />
+          <DarkModeIcon size={26} />
         </Nav>
       </div>
-      <Separator />
     </HeaderRoot>
   )
 }

@@ -33,7 +33,6 @@ export default function Home() {
   return (
     <div tw="max-w-xl py-8 mx-auto">
       <h1 tw="text-4xl font-bold">My Blog</h1>
-
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}

@@ -10,6 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
+      <Separator />
       <main>{children}</main>
       <Separator />
       <div tw="p-1">
