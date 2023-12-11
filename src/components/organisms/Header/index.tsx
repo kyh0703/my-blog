@@ -26,7 +26,11 @@ const Header = () => {
     <HeaderRoot>
       <div tw="flex justify-between pl-1 pr-1">
         <Nav>
-          <AppLogo />
+          <NavLink>
+            <Link href="/">
+              <AppLogo />
+            </Link>
+          </NavLink>
           <NavLink>Blog</NavLink>
           <NavLink>Categories</NavLink>
         </Nav>
