@@ -6,6 +6,7 @@ import {
   DarkModeIcon,
   EmojiPeopleIcon,
 } from '@/components/atoms/Icon'
+import AppLogo from '@/components/atoms/AppLogo'
 
 const HeaderRoot = styled.header([tw`h-[56px] border-none`])
 
@@ -25,6 +26,7 @@ const Header = () => {
     <HeaderRoot>
       <div tw="flex justify-between pl-1 pr-1">
         <Nav>
+          <AppLogo />
           <NavLink>Blog</NavLink>
           <NavLink>Categories</NavLink>
         </Nav>

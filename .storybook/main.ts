@@ -1,25 +1,25 @@
-import type { StorybookConfig } from "@storybook/nextjs";
-import TsConfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import type { StorybookConfig } from '@storybook/nextjs'
+import TsConfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 
 const config: StorybookConfig = {
   stories: [
-    "../src/components/**/*.mdx",
-    "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    '../src/components/**/*.mdx',
+    '../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-onboarding",
-    "@storybook/addon-interactions",
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
+    '@storybook/addon-interactions',
   ],
   framework: {
-    name: "@storybook/nextjs",
+    name: '@storybook/nextjs',
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: 'tag',
   },
-  staticDirs: ["public"],
+  staticDirs: ['public'],
   core: {
     disableTelemetry: true,
   },
@@ -27,26 +27,26 @@ const config: StorybookConfig = {
   babel: async (options) => {
     return {
       ...options,
-      presets: [["next/babel"]],
+      presets: [['next/babel']],
       plugins: [
-        "babel-plugin-macros",
+        'babel-plugin-macros',
         [
-          "@emotion/babel-plugin-jsx-pragmatic",
+          '@emotion/babel-plugin-jsx-pragmatic',
           {
-            export: "jsx",
-            import: "__cssprop",
-            module: "@emotion/react",
+            export: 'jsx',
+            import: '__cssprop',
+            module: '@emotion/react',
           },
         ],
         [
-          "@babel/plugin-transform-react-jsx",
+          '@babel/plugin-transform-react-jsx',
           {
-            pragma: "__cssprop",
+            pragma: '__cssprop',
           },
-          "emotion-css-prop",
+          'emotion-css-prop',
         ],
       ],
-    };
+    }
   },
   webpackFinal: async (config) => {
     return {
@@ -55,8 +55,8 @@ const config: StorybookConfig = {
         ...config.resolve,
         plugins: [new TsConfigPathsPlugin()],
       },
-    };
+    }
   },
-};
+}
 
-export default config;
+export default config
