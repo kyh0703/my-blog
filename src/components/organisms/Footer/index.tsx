@@ -19,7 +19,7 @@ const Footer = () => {
           </Link>
         </div>
         <span tw="text-sm">
-          © 2017-2023 overthinker blog Powered by Next.js, Github Pages
+          Copyright © 2017 overthinker All rights reserved
         </span>
       </div>
     </footer>
