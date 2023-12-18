@@ -7,14 +7,15 @@ import {
   EmojiPeopleIcon,
 } from '@/components/atoms/Icon'
 import AppLogo from '@/components/atoms/AppLogo'
+import Clock from '@/components/atoms/Clock'
 
 const HeaderRoot = styled.header([tw`h-[56px] border-none`])
 
 const Nav = styled.div([
   tw`flex h-[56px] items-center text-base`,
   css`
-    & > span:not(:first-child) {
-      margin-left: 8px;
+    & > *:not(:first-child) {
+      margin-left: 9px;
     }
   `,
 ])
@@ -35,6 +36,7 @@ const Header = () => {
           <NavLink>Categories</NavLink>
         </Nav>
         <Nav>
+          <Clock />
           <EmojiPeopleIcon size={26} />
           <DarkModeIcon size={26} />
         </Nav>

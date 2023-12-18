@@ -19,9 +19,7 @@ import {
   Email,
 } from '@mui/icons-material'
 import SvgIcon from '@mui/material/SvgIcon'
-import tw, { styled, css } from 'twin.macro'
-
-import { colors } from '@/themes'
+import tw, { styled, css, theme } from 'twin.macro'
 
 type IconWrapperProps = {
   size: number
@@ -34,7 +32,7 @@ const IconWrapper = styled.div<IconWrapperProps>(
   ({ size, cursor, color, backgroundColor }) => [
     tw`inline-block`,
     css`
-      color: ${color ? color : colors.icon};
+      color: ${color ? color : theme`colors.icon`};
       background-color: ${backgroundColor};
       font-size: ${size}px;
       width: ${size}px;
