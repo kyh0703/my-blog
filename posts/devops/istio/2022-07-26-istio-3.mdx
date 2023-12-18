@@ -1,13 +1,13 @@
 ---
 published: true
-title: "istio - 배포"
-categories:
+title: 'istio - 배포'
+category:
   - Istio
 tags:
   - [istio]
 toc: true
 toc_sticky: true
-date: "2022-07-26 10:30"
+date: '2022-07-26 10:30'
 ---
 
 ### Traffic management
@@ -235,7 +235,7 @@ spec:
   trafficPolicy:
     loadBalancer:
       consistentHash:
-        httpHeaderName: "x-myval"
+        httpHeaderName: 'x-myval'
   subsets:
     - labels: # SELECTOR.
         app: staff-service # find pods with label "safe"

@@ -1,18 +1,18 @@
 ---
 published: true
-title: "Ansible - gather_facts"
-categories:
+title: 'Ansible - gather_facts'
+category:
   - Ansible
 tags:
   - [devops, Ansible]
 toc: true
 toc_sticky: true
-date: "2022-07-04 19:30"
+date: '2022-07-04 19:30'
 ---
 
 #### Gather_facts
 
-`ansible-playbook.yml`파일들을 보다보면 `gather_facts`라는 것이 보입니다. 
+`ansible-playbook.yml`파일들을 보다보면 `gather_facts`라는 것이 보입니다.
 
 **Facts?**
 
@@ -41,8 +41,7 @@ date: "2022-07-04 19:30"
   lineinfile:
     path: /etc/hosts
     line: "{{ hostvars[item]['ansible_facts']['default_ipv4']['address'] }} {{ hostvars[item]['ansible_facts']['hostname'] }}"
-  loop: "{{ ansible_play_hosts }}"
-
+  loop: '{{ ansible_play_hosts }}'
 ```
 
 ### 마치며

@@ -1,13 +1,13 @@
 ---
 published: true
-title: "CKAD 자격증 따기 - 3"
-categories:
+title: 'CKAD 자격증 따기 - 3'
+category:
   - Certificate
 tags:
   - [certificate, CKAD]
 toc: true
 toc_sticky: true
-date: "2022-06-27 19:30"
+date: '2022-06-27 19:30'
 ---
 
 #### CKAD 시험 전날 마지막 정리
@@ -45,21 +45,21 @@ export now='--force --grace-period 0'
 
 #### Killer.sh
 
-* pod status  확인
+- pod status 확인
 
 ```bash
 kubectl -n default describe pod pod1 | grep -i status:
 ```
 
-* helm pending 된거 확인
+- helm pending 된거 확인
 
 ```bash
 helm -n mercury ls -a
 ```
 
-* network policy 확인
+- network policy 확인
 
-* curl
+- curl
 
 ```bash
 k run tmp --restart=Never --rm --image=nginx:alpine -i -- curl http://project-plt-6cc-svc.pluto:3333

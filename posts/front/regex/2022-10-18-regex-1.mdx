@@ -1,41 +1,41 @@
 ---
 published: true
-title: "regex - 명시적 문자, 정량자"
-categories:
+title: 'regex - 명시적 문자, 정량자'
+category:
   - Regex
 tags:
   - [regex, udemy]
 toc: true
 toc_sticky: true
-date: "2022-10-18 21:00"
+date: '2022-10-18 21:00'
 ---
 
 ## 소개
 
 ### Regex(Regular expressions)
 
-* 상세한 주석을 코드에 추가
+- 상세한 주석을 코드에 추가
 
 ```js
 // find all filenames without space that end with js / jsx/ ts
 const jsFilnameRe = /^\S.(jsx?|ts)$/
 ```
 
-* 가독성이 좋은 정규식을 작성하는 것은 추후의 코드를 읽게 될 때 도움이 된다.
+- 가독성이 좋은 정규식을 작성하는 것은 추후의 코드를 읽게 될 때 도움이 된다.
 
 ### 사용할 도구
 
-* [regex101.com](https://regex101.com/)
+- [regex101.com](https://regex101.com/)
 
 ![image-20221018221314887](../../../assets/images/posts/2022-07-12-post-regex-1/image-20221018221314887.png)
 
-* javascript: 정규식의 `/` 시작과 끝을 의미
+- javascript: 정규식의 `/` 시작과 끝을 의미
 
 ## 명시적 문자 및 정량자
 
 ### 명시적 문자
 
-* 있는 그대로의 문자를 말함
+- 있는 그대로의 문자를 말함
 
 ```js
 // [testcase]
@@ -47,14 +47,14 @@ const regex = /hey/
 
 ### 정량자
 
-* 하나의 문자가 연속으로 몇 번이나 이어질 수 있는지를 결정하는 정량자
+- 하나의 문자가 연속으로 몇 번이나 이어질 수 있는지를 결정하는 정량자
 
-| ?    | 0 또는 1번                                          |
-| ---- | --------------------------------------------------- |
-| +    | 상한 없이 한번 이상을 의미하지만 최소 한번이 필요함 |
-| *    | 0 또는 그 이상의 연속을 의미 (제한 없이)            |
+| ?   | 0 또는 1번                                          |
+| --- | --------------------------------------------------- |
+| +   | 상한 없이 한번 이상을 의미하지만 최소 한번이 필요함 |
+| \*  | 0 또는 그 이상의 연속을 의미 (제한 없이)            |
 
-* `+`
+- `+`
 
 ```js
 // [testcase]
@@ -66,7 +66,7 @@ const regex = /hey/
 const regex = /he+y/
 ```
 
-* `?`
+- `?`
 
 ```js
 // [testcase]
@@ -79,7 +79,7 @@ const regex = /he+y/
 const regex = /Kittens?!/
 ```
 
-* `*`
+- `*`
 
 ```js
 // [testcase]
@@ -95,7 +95,7 @@ const regex = /Kittens!*/
 
 ### 특수문자
 
-`.`:  newLine을 제외한 모든 문자라는 의미
+`.`: newLine을 제외한 모든 문자라는 의미
 
 ```js
 // [testcase]
@@ -108,7 +108,7 @@ const regex = /Kittens.+/
 
 `.`을 의도한 것이라면 `\.`로 문자를 지정하여야 한다.
 
-`\` 필요한 특수 문자들(+ ? * . {} [] 9 0 ^ $...)
+`\` 필요한 특수 문자들(+ ? \* . {} [] 9 0 ^ $...)
 
 ```js
 // [testcase]
@@ -147,4 +147,3 @@ const regex = /Kittens\.{3}/
 // X kittens..
 const regex = /Kittens\.{3,}/
 ```
-

@@ -1,30 +1,27 @@
 ---
-published: true
-title: "CKA 자격증 따기 - day18"
-categories:
-  - Certificate
+title: CKA 자격증 따기 - day18
+category: certificate
 tags:
-  - [certificate, CKA]
-toc: true
-toc_sticky: true
-date: "2022-05-06 12:00"
+  - certificate
+  - cka
+date: 2022-05-06
 ---
 
 #### Networking Cluster Node
 
-* `k8s`클러스터는 마스터, 작업자 노드가 있고, 각 노드는 하나의 인터페이스를 가지며 이 인터페이스는 하나의 아이피 주소를 갖는다.
-* 호스트들은 고유한 이름이 필요한다 MAC주소를 키로 가진다.
-* `master`노드는 `kube-apiserver`는  `6443` 포트 오픈
-* 각 노드의 `kubelet`은 `19250` 포트 오픈
-* `kube-scheduler`는 `10251` 포트 오픈
-* `kube-controller-manager`는 `10252` 포트 오픈
-* `worker`노드들은 노드포트인 `30000-32767` 포트 오픈
-* `etcd`는 `2379` 포트 오픈
-* `mater` 노드가 여러개이면 `etcd-client`가 통신할 수 있게 `2380` 포트 오픈
+- `k8s`클러스터는 마스터, 작업자 노드가 있고, 각 노드는 하나의 인터페이스를 가지며 이 인터페이스는 하나의 아이피 주소를 갖는다.
+- 호스트들은 고유한 이름이 필요한다 MAC주소를 키로 가진다.
+- `master`노드는 `kube-apiserver`는 `6443` 포트 오픈
+- 각 노드의 `kubelet`은 `19250` 포트 오픈
+- `kube-scheduler`는 `10251` 포트 오픈
+- `kube-controller-manager`는 `10252` 포트 오픈
+- `worker`노드들은 노드포트인 `30000-32767` 포트 오픈
+- `etcd`는 `2379` 포트 오픈
+- `mater` 노드가 여러개이면 `etcd-client`가 통신할 수 있게 `2380` 포트 오픈
 
-> * [벤더 CNI](https://kubernetes.io/docs/concepts/cluster-administration/addons/)
-> * [네트워킹 구조](https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-networking-model)
-> * [방화벽포트](https://kubernetes.io/docs/reference/ports-and-protocols/)
+> - [벤더 CNI](https://kubernetes.io/docs/concepts/cluster-administration/addons/)
+> - [네트워킹 구조](https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-networking-model)
+> - [방화벽포트](https://kubernetes.io/docs/reference/ports-and-protocols/)
 
 **명령어**
 
@@ -50,11 +47,11 @@ $ route
 
 #### Pod Networking
 
-* 각각의 파드들은 `bridge`와 연결되며 IP주소를 할당 받는다.
-* 각 노드간 파드들은 서로 통신할 수 있는 구조여야 하는데 , 이를 위해서는 일일이 파드가 생성될때 마다 가상케이블을 만들고, 연결하고, namespace에 IP주를 연결하며, 설정하는 작업들을 스크립트로 만들어둬서 파드가 생성될떄마다 이 작업을 하여야 한다.
-* 더 개선된 작업으로서는 노드들을 모두 연결하는 라우터를 둬서 특정 IP CIDR로 들어오는 요청에 대해서는 특정 노드로 전달시켜버리는 것이다.
-* 수천개가 넘어가면 수동으로 하기 힘들다.
-* 중개자 역할을 하는 CNI(Container Network Interface)가 `k8s`에게 스크립트를 파드가 만들어질때 뭘할지 명시하는 내용을 스크립트로 준다.
+- 각각의 파드들은 `bridge`와 연결되며 IP주소를 할당 받는다.
+- 각 노드간 파드들은 서로 통신할 수 있는 구조여야 하는데 , 이를 위해서는 일일이 파드가 생성될때 마다 가상케이블을 만들고, 연결하고, namespace에 IP주를 연결하며, 설정하는 작업들을 스크립트로 만들어둬서 파드가 생성될떄마다 이 작업을 하여야 한다.
+- 더 개선된 작업으로서는 노드들을 모두 연결하는 라우터를 둬서 특정 IP CIDR로 들어오는 요청에 대해서는 특정 노드로 전달시켜버리는 것이다.
+- 수천개가 넘어가면 수동으로 하기 힘들다.
+- 중개자 역할을 하는 CNI(Container Network Interface)가 `k8s`에게 스크립트를 파드가 만들어질때 뭘할지 명시하는 내용을 스크립트로 준다.
 
 ```sh
 # 각각 CNI마다 스크립트는 다름
@@ -79,8 +76,8 @@ ip -n <namespace> link set ...
 ip link del ...
 ```
 
-* `kubelet`은 각 노드에서 `container`생성을 담당한다.
-* `kubelet`에 CNI 값 확인
+- `kubelet`은 각 노드에서 `container`생성을 담당한다.
+- `kubelet`에 CNI 값 확인
 
 ```bash
 # kubelet
@@ -93,9 +90,9 @@ ip link del ...
 
 #### CNI In Kubernetes
 
-* CNI 인터페이스를 구현하는 `plugin`을 사용하여 `k8s네트워크`를 설정할 수 있다.
-* `CNI Plugin`은 컨테이너를 생성하는 책임을 가진 각 노드의 `kubelet` 서비스에 의해 설정되며 실행된다.
-* `kubelet.service`파일을 확인해보면 CNI 네트워크 플러그인 설정 옵션을 확인 할 수 있다.
+- CNI 인터페이스를 구현하는 `plugin`을 사용하여 `k8s네트워크`를 설정할 수 있다.
+- `CNI Plugin`은 컨테이너를 생성하는 책임을 가진 각 노드의 `kubelet` 서비스에 의해 설정되며 실행된다.
+- `kubelet.service`파일을 확인해보면 CNI 네트워크 플러그인 설정 옵션을 확인 할 수 있다.
 
 ```bash
 ExecStart=/usr/local/bin/kubelet \\

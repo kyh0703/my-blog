@@ -1,13 +1,10 @@
 ---
-published: true
-title: "CKA 자격증 따기 - day22"
-categories:
-  - Certificate
+title: CKA 자격증 따기 - day22
+category: certificate
 tags:
-  - [certificate, CKA]
-toc: true
-toc_sticky: true
-date: "2022-05-13 12:00"
+  - certificate
+  - cka
+date: 2022-05-13 12:00
 ---
 
 #### YAML
@@ -43,69 +40,69 @@ Servers:
     status: active
 ```
 
-* Key-Value Pair
+- Key-Value Pair
 
 ```yaml
 Fruit: Apple
 ```
 
-* Array/Lists
+- Array/Lists
 
 ```yaml
 Fruits:
-- Oragne
-- Apple
-- Banana
+  - Oragne
+  - Apple
+  - Banana
 ```
 
-* Dictionary/Map
+- Dictionary/Map
 
 ```yaml
 Banana:
   Calories: 105
   Fat: 0.4g
-  Carbs: 27g 
+  Carbs: 27g
 ```
 
 #### JSON Path
 
 **Basic**
 
-* data
+- data
 
 ```json
 {
-    "car": {
-        "color": "blue",
-        "price": "$20,000",
-        "wheels": [
-            {
-                "model": "X345ERT",
-                "location": "front-right"
-            },
-            {
-                "model": "X236DEM",
-                "location": "rear-right"
-            },
-            {
-                "model": "X346ERT",
-                "location": "front-left"
-            },
-            {
-                "model": "X347ERT",
-                "location": "rear-left"
-            },
-        ]
-    }
+  "car": {
+    "color": "blue",
+    "price": "$20,000",
+    "wheels": [
+      {
+        "model": "X345ERT",
+        "location": "front-right"
+      },
+      {
+        "model": "X236DEM",
+        "location": "rear-right"
+      },
+      {
+        "model": "X346ERT",
+        "location": "front-left"
+      },
+      {
+        "model": "X347ERT",
+        "location": "rear-left"
+      }
+    ]
+  }
 }
 ```
 
-* query
+- query
 
 ```bash
 # Get the model of the rear-right wheel?
 
-# [Array] 
+# [Array]
 $.car.wheels[2].model
 
 # [Condition]
@@ -120,11 +117,11 @@ $.car.wheels[?(@.location == "rear-right")].model
 1    "google", -4
 2    "microsoft", -3
 3    "amazon", -2
-4    "facebook" -1 
+4    "facebook" -1
 ]
 ```
 
-* query
+- query
 
 ```bash
 # Get the last element
@@ -137,13 +134,14 @@ $[-3:]
 
 **Kubernetes**
 
-why? 
+why?
 
-* Large Data sets
-  * 100s of Nodes
-  * 1000s of Pods, Delpoyments, ReplicaSets
+- Large Data sets
 
-* json query로 필요한데이터 추출
+  - 100s of Nodes
+  - 1000s of Pods, Delpoyments, ReplicaSets
+
+- json query로 필요한데이터 추출
 
 how?
 
@@ -151,7 +149,7 @@ how?
 2. Familaize with JSON output
 3. From the JSONPath Query(`$` 생략가능)
 
-1. Use the JSON PATH query with kubectl command
+4. Use the JSON PATH query with kubectl command
 
 ```bash
 k get po -o=jsonpath='{.items[0].sepc.container[0].image}'
@@ -163,14 +161,14 @@ k get no -o=jsonpath='{.items[*].metadata.name} {"\n"} {.items[*].status.capacit
 
 **loops - range**
 
-* print
+- print
 
 ```bash
 mater 4
 node01 4
 ```
 
-* plan
+- plan
 
 ```bash
 FOR EACH NODE
@@ -178,7 +176,7 @@ FOR EACH NODE
 END FOR
 ```
 
-* command
+- command
 
 ```bash
 `{range .itmes[*]}

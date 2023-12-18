@@ -1,13 +1,10 @@
 ---
-published: true
-title: "CKA 자격증 따기 - day13"
-categories:
-  - Certificate
+title: CKA 자격증 따기 - day13
+category: certificate
 tags:
-  - [certificate, CKA]
-toc: true
-toc_sticky: true
-date: "2022-04-29 12:00"
+  - certificate
+  - CKA
+date: 2022-04-29
 ---
 
 #### Service Account
@@ -115,7 +112,7 @@ spec:
       securityContext:
         runAsUser: 1000
         capabilities:
-          add: ["MAC_ADMIN"]
+          add: ['MAC_ADMIN']
 ```
 
 #### Network Policy

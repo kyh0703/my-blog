@@ -1,13 +1,13 @@
 ---
 published: true
-title: "istio - mTLS"
-categories:
+title: 'istio - mTLS'
+category:
   - Istio
 tags:
   - [istio]
 toc: true
 toc_sticky: true
-date: "2022-08-04 16:15"
+date: '2022-08-04 16:15'
 ---
 
 #### 클러스터 내부인데 TLS가 왜 필요할까?
@@ -18,11 +18,11 @@ date: "2022-08-04 16:15"
 
 ```yaml
 # This will enforce that ONLY traffic that is TLS is allowed between proxies
-apiVersion: "security.istio.io/v1beta1"
-kind: "PeerAuthentication"
+apiVersion: 'security.istio.io/v1beta1'
+kind: 'PeerAuthentication'
 metadata:
-  name: "default"
-  namespace: "istio-system"
+  name: 'default'
+  namespace: 'istio-system'
 spec:
   mtls:
     mode: STRICT
@@ -62,11 +62,11 @@ spec:
 
 ```yaml
 # This will enforce that ONLY traffic that is TLS is allowed between proxies
-apiVersion: "security.istio.io/v1beta1"
-kind: "PeerAuthentication"
+apiVersion: 'security.istio.io/v1beta1'
+kind: 'PeerAuthentication'
 metadata:
-  name: "default"
-  namespace: "istio-system"
+  name: 'default'
+  namespace: 'istio-system'
 spec:
   mtls:
     mode: PERMISSIVE
@@ -85,11 +85,11 @@ spec:
 
 ```yaml
 # This will enforce that ONLY traffic that is TLS is allowed between proxies
-apiVersion: "security.istio.io/v1beta1"
-kind: "PeerAuthentication"
+apiVersion: 'security.istio.io/v1beta1'
+kind: 'PeerAuthentication'
 metadata:
-  name: "default"
-  namespace: "istio-system"
+  name: 'default'
+  namespace: 'istio-system'
 spec:
   mtls:
     mode: STRICT

@@ -1,25 +1,25 @@
 ---
 published: true
-title: "terraform - 2"
-categories:
-  - Terraform 
+title: 'terraform - 2'
+category:
+  - Terraform
 tags:
-  - [terraform ]
+  - [terraform]
 toc: true
 toc_sticky: true
-date: "2022-08-11 10:30"
+date: '2022-08-11 10:30'
 ---
 
 [실습링크](https://terraform101.inflearn.devopsart.dev/preparation/aws-configure/)
 
 ### 구성요소
 
-* `provider` 테라폼으로 생성할 인프라의 종류
-* `resource` 테라폼으로 실제로 생성할 인프라 자원
-* `state` 테라폼을 통해 생성한 자원의 상태
-* `output` 테라폼으로 만든 자원을 변수 형태로 state에 저장
-* `module` 공통적으로 활용할 수 있는 코드를 모듈 형태로 정의
-* `remote` 다른 경로의 state를 참조
+- `provider` 테라폼으로 생성할 인프라의 종류
+- `resource` 테라폼으로 실제로 생성할 인프라 자원
+- `state` 테라폼을 통해 생성한 자원의 상태
+- `output` 테라폼으로 만든 자원을 변수 형태로 state에 저장
+- `module` 공통적으로 활용할 수 있는 코드를 모듈 형태로 정의
+- `remote` 다른 경로의 state를 참조
 
 #### provider.tf
 
@@ -32,12 +32,12 @@ provider "aws" {
 
 ### 기본 명령어
 
-* `init` 테라폼 명령어 사용을 위해 각종 설정을 진행
-* `plan` 테라폼으로 작성한 코드가 실제로 어떻게 만들어질지에 대한 예측 결과를 보여줌
-* `apply` 테라폼 코드로 실제 인프라를 생성하는 명령어
-* `import` 이미 만들어진 자원을 테라폼 "state"파일로 옮겨주는 명령어
-* `state` 테라폼 "state"를 다루는 명령어
-* `destroy` 생성된 자원들 "state"파일 모두 삭제하는 명령어
+- `init` 테라폼 명령어 사용을 위해 각종 설정을 진행
+- `plan` 테라폼으로 작성한 코드가 실제로 어떻게 만들어질지에 대한 예측 결과를 보여줌
+- `apply` 테라폼 코드로 실제 인프라를 생성하는 명령어
+- `import` 이미 만들어진 자원을 테라폼 "state"파일로 옮겨주는 명령어
+- `state` 테라폼 "state"를 다루는 명령어
+- `destroy` 생성된 자원들 "state"파일 모두 삭제하는 명령어
 
 ### AWS 계정 설정
 

@@ -1,13 +1,13 @@
 ---
 published: true
-title: "css - grid"
-categories:
+title: 'css - grid'
+category:
   - CSS
 tags:
   - [css, nomadcoders]
 toc: true
 toc_sticky: true
-date: "2022-07-12 21:00"
+date: '2022-07-12 21:00'
 ---
 
 ### GRID
@@ -18,30 +18,30 @@ date: "2022-07-12 21:00"
 
 부모에 적용하여 grid를 조정
 
-* grid-template-column
-* grid-template-row
-* column-gap
-* row-gap
-* gap
+- grid-template-column
+- grid-template-row
+- column-gap
+- row-gap
+- gap
 
 #### grid-template-areas
 
-`grid-area`로 영역을 지정한 후 부모영역 `grid`에서 다음과 같이 구도를 배치할 수 있다.`grid-area`를  비우기위해선 `.`지정
+`grid-area`로 영역을 지정한 후 부모영역 `grid`에서 다음과 같이 구도를 배치할 수 있다.`grid-area`를 비우기위해선 `.`지정
 
 ```css
 .grid {
-    display: grid;
-    grid-template-columns: auto 200px;
-	grid-template-rows: 100px repeat(2, 200px) 100px;
-    grid-template-areas:
-    "header header header header"
-    "content content . nav"
-    "content content . nav"
-    "footer footer footer footer";
+  display: grid;
+  grid-template-columns: auto 200px;
+  grid-template-rows: 100px repeat(2, 200px) 100px;
+  grid-template-areas:
+    'header header header header'
+    'content content . nav'
+    'content content . nav'
+    'footer footer footer footer';
 }
 
 .header {
-    grid-area: header
+  grid-area: header;
 }
 ```
 
@@ -49,7 +49,7 @@ date: "2022-07-12 21:00"
 
 쉬운방법: `grid-column {start} / {end} `
 
-더 쉬운방법: `grid-column: 1 / -1;` 
+더 쉬운방법: `grid-column: 1 / -1;`
 
 > -1은 끝을 의미
 
@@ -111,13 +111,13 @@ date: "2022-07-12 21:00"
 }
 ```
 
-* repeat안에 이름을 넣고 싶으면?
+- repeat안에 이름을 넣고 싶으면?
 
 ```css
 .grid {
-    /* row의 라인 이름을 "sexy-line" 으로 지정 */
-    /* 아래 라인은 로우 라인 전체를 sexy-line */
-    grid-template-rows: repeat(4, 100px [sexy-line]);
+  /* row의 라인 이름을 "sexy-line" 으로 지정 */
+  /* 아래 라인은 로우 라인 전체를 sexy-line */
+  grid-template-rows: repeat(4, 100px [sexy-line]);
 }
 ```
 
@@ -131,8 +131,8 @@ date: "2022-07-12 21:00"
 
 ```css
 .grid {
-    /* 할수 있는 만큼 공간을 차지하고 4번 똑같이 나눈다 */
-    grid-template-columns: repeat(4, 1fr);
+  /* 할수 있는 만큼 공간을 차지하고 4번 똑같이 나눈다 */
+  grid-template-columns: repeat(4, 1fr);
 }
 ```
 
@@ -144,9 +144,9 @@ date: "2022-07-12 21:00"
   gap: 5px;
   height: 50vh;
   grid-template:
-    "header header header header" 1fr
-    "content content content nav" 2fr
-    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
+    'header header header header' 1fr
+    'content content content nav' 2fr
+    'footer footer footer footer' 1fr / 1fr 1fr 1fr 1fr;
 }
 
 .header {
@@ -175,17 +175,17 @@ date: "2022-07-12 21:00"
 
 shortcuts: `place-items: y x`
 
-* 기본값 `stretch`
-  * grid 부모는 자식들을 늘려서 영역을 채운다.
-* item은 cell중에 하나
+- 기본값 `stretch`
+  - grid 부모는 자식들을 늘려서 영역을 채운다.
+- item은 cell중에 하나
 
-* 예시
+- 예시
 
-  * center
+  - center
 
   ![image-20220715212805291](../../../assets/images/posts/2022-07-13-post-css-grid/image-20220715212805291.png)
 
-  * start
+  - start
 
 ![image-20220715212805291](../../../assets/images/posts/2022-07-13-post-css-grid/image-20220715212805291-16578924593433.png)
 
@@ -199,8 +199,8 @@ shortcuts: `place-content: y x`
 
 ![image-20220715213707604](../../../assets/images/posts/2022-07-13-post-css-grid/image-20220715213707604.png)
 
-* content는 전체 grid를 컨트롤(flex-box를 생각하면 간단하다.)
-* 기본값 `strech`
+- content는 전체 grid를 컨트롤(flex-box를 생각하면 간단하다.)
+- 기본값 `strech`
 
 #### Auto Columns and Rows
 
@@ -208,7 +208,7 @@ shortcuts: `place-content: y x`
 
 shortcuts: `place-self: y x`
 
-* 자식들에게 개별 적용
+- 자식들에게 개별 적용
 
 ```css
 .grid {
@@ -233,35 +233,33 @@ shortcuts: `place-self: y x`
 as-is
 
 ```html
-<div class="grid">
-    .item*20>{$}
-</div>
+<div class="grid">.item*20>{$}</div>
 ```
 
 to-be
 
 ```html
 <div class="grid">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
-    <div class="item">4</div>
-    <div class="item">5</div>
-    <div class="item">6</div>
-    <div class="item">7</div>
-    <div class="item">8</div>
-    <div class="item">9</div>
-    <div class="item">10</div>
-    <div class="item">11</div>
-    <div class="item">12</div>
-    <div class="item">13</div>
-    <div class="item">14</div>
-    <div class="item">15</div>
-    <div class="item">16</div>
-    <div class="item">17</div>
-    <div class="item">18</div>
-    <div class="item">19</div>
-    <div class="item">20</div>
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+  <div class="item">4</div>
+  <div class="item">5</div>
+  <div class="item">6</div>
+  <div class="item">7</div>
+  <div class="item">8</div>
+  <div class="item">9</div>
+  <div class="item">10</div>
+  <div class="item">11</div>
+  <div class="item">12</div>
+  <div class="item">13</div>
+  <div class="item">14</div>
+  <div class="item">15</div>
+  <div class="item">16</div>
+  <div class="item">17</div>
+  <div class="item">18</div>
+  <div class="item">19</div>
+  <div class="item">20</div>
 </div>
 ```
 
@@ -271,7 +269,7 @@ to-be
 
 ![image-20220715215012827](../../../assets/images/posts/2022-07-13-post-css-grid/image-20220715215012827.png)
 
-* `grid-auto-row`은 내가 지정한 열과 행보다 더 많은 `grid`가 있을때 기본값을 지정해준다.
+- `grid-auto-row`은 내가 지정한 열과 행보다 더 많은 `grid`가 있을때 기본값을 지정해준다.
 
 ```css
 .grid {
@@ -286,7 +284,7 @@ to-be
 
 **grid-auto-flow & grid-auto-column**
 
-* `grid-auto-flow`는 추가된 `grid`를 늘린 방향을 지정한다.
+- `grid-auto-flow`는 추가된 `grid`를 늘린 방향을 지정한다.
 
 ```css
 .grid {
@@ -319,7 +317,7 @@ to-be
 
 #### auto-fit auto-fill
 
-* `repeat()` 에서만 사용
+- `repeat()` 에서만 사용
 
 ```css
 .grid {
@@ -343,21 +341,21 @@ to-be
 
 **auto-fill**
 
-* column을 만들어 주는 역할
+- column을 만들어 주는 역할
 
-* 가능한한 많은 컬럼
-* 뒤에 여백에도 만들어줌
+- 가능한한 많은 컬럼
+- 뒤에 여백에도 만들어줌
 
 **auto-fit**
 
-* 현재 `div`를 가져와서 다 늘려서 채움
-* 빈 공간없이 채움
+- 현재 `div`를 가져와서 다 늘려서 채움
+- 빈 공간없이 채움
 
 #### min-content max-content
 
-* 크기를 의미함
+- 크기를 의미함
 
-* min-content는 박스를 만들면 content가 작아질 수 있는 만큼 작아지고
+- min-content는 박스를 만들면 content가 작아질 수 있는 만큼 작아지고
 
   max-content가 필요한만큼 크게 만드는것
 

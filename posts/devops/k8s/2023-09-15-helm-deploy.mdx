@@ -1,13 +1,13 @@
 ---
 published: true
-title: "helm CI/CD 배포 전략"
-categories:
+title: 'helm CI/CD 배포 전략'
+category:
   - Kubernetes
 tags:
   - [kubernetes]
 toc: true
 toc_sticky: true
-date: "2023-09-15 09:00"
+date: '2023-09-15 09:00'
 ---
 
 `k8s`를 통해 배포를 하기 위해서는 다양한 전략들을 사용 할 수 있습니다. 그래서 많은 회사들은 `devops` 통해 배포 전략을 수립하는데요. 기존 엔지니어링 팀이 있는 회사에 경우 `package`로 묶어서 `private`한 환경에 배포하는 경우들이 많습니다. 자체 서비스를 고객들을 대상으로 클라우드에서 배포할 경우에는 `gitops`를 두고 `main` 브랜치만 사용할 수 있으나, `private`한 환경에 배포와는 맞지 않을 수 있습니다. 저도 다양한 배포 전략들을 검색하고 조사하여 아래와 같은 배포 전략을 수립하였는데요. 해당 배포 전략을 공유할려고 합니다
@@ -26,4 +26,4 @@ date: "2023-09-15 09:00"
 
 ## Helm Chart VS Kustomize
 
-차트를 배포하기 위해서는 `helm`을 사용하게 됩니다. 배포 환경 별로 구성하기 위해서는 `kustomize`를 같이 사용하는 회사들도 많이 있습니다. 
+차트를 배포하기 위해서는 `helm`을 사용하게 됩니다. 배포 환경 별로 구성하기 위해서는 `kustomize`를 같이 사용하는 회사들도 많이 있습니다.

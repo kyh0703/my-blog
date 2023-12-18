@@ -1,13 +1,13 @@
 ---
 published: true
-title: "istio - Routing"
-categories:
+title: 'istio - Routing'
+category:
   - Istio
 tags:
   - [istio]
 toc: true
 toc_sticky: true
-date: "2022-08-03 10:30"
+date: '2022-08-03 10:30'
 ---
 
 #### Prefix Routing
@@ -25,22 +25,22 @@ metadata:
   namespace: default
 spec:
   hosts: # which incoming host are we applying the proxy rules to???
-    - "*"
+    - '*'
   gateways:
     - ingress-gateway-configuration
   http:
     - match:
         - uri: # IF
-            prefix: "/experimental"
+            prefix: '/experimental'
         - uri: # OR
-            prefix: "/canary"
+            prefix: '/canary'
       route: # THEN
         - destination:
             host: fleetman-webapp
             subset: experimental
     - match:
         - uri:
-            prefix: "/"
+            prefix: '/'
       route:
         - destination:
             host: fleetman-webapp
@@ -66,7 +66,7 @@ metadata:
   namespace: default
 spec:
   hosts: # which incoming host are we applying the proxy rules to???
-    - "fleetman.com"
+    - 'fleetman.com'
   gateways:
     - ingress-gateway-configuration
   http:
@@ -82,7 +82,7 @@ metadata:
   namespace: default
 spec:
   hosts: # which incoming host are we applying the proxy rules to???
-    - "experimental.fleetman.com"
+    - 'experimental.fleetman.com'
   gateways:
     - ingress-gateway-configuration
   http:

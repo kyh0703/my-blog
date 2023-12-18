@@ -1,13 +1,13 @@
 ---
 published: true
-title: "CKAD 자격증 따기 - 2"
-categories:
+title: 'CKAD 자격증 따기 - 2'
+category:
   - Certificate
 tags:
   - [certificate, CKAD]
 toc: true
 toc_sticky: true
-date: "2022-06-27 19:30"
+date: '2022-06-27 19:30'
 ---
 
 ### 2021 Update
@@ -24,10 +24,10 @@ kind: Role
 metadata:
   name: developer
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["create"]
-  resourceNames: ["blue", "orange"] # 리소스 제한가능
+  - apiGroups: ['']
+    resources: ['pods']
+    verbs: ['create']
+    resourceNames: ['blue', 'orange'] # 리소스 제한가능
 ```
 
 기존 `RBAC`로 엑세스 제어를 할 수 없는 몇가지 사항이 있음.
@@ -38,11 +38,11 @@ rules:
 
 `Admission Controller` 는 다음과 같은 역할을 할 수 있다.
 
-* AlwaysPullImages
-* DefaultStorageClass
-* EventRateLimit
-* NamespaceExists
-* May more ...
+- AlwaysPullImages
+- DefaultStorageClass
+- EventRateLimit
+- NamespaceExists
+- May more ...
 
 > 예시)
 >
@@ -54,14 +54,14 @@ rules:
 
 **활성화**
 
-* 승인 목록 확인
+- 승인 목록 확인
 
 ```bash
 kube-apiserver -h | grep enable-admission-plugins
 # 승인 목록 표기
 ```
 
-* 활성화
+- 활성화
 
 ```yaml
 ExecStart=/usr/local/bin/kube-apiverser \\
@@ -71,29 +71,29 @@ ExecStart=/usr/local/bin/kube-apiverser \\
 
 #### Validating & Mutating Admission Controllers
 
-`Default Storage Class`는  PC 생성 요청을 감시하고 확인한다.
+`Default Storage Class`는 PC 생성 요청을 감시하고 확인한다.
 
 지정하지 않은 경우 `Default`로 지정하고 기본 값을 추가하는데, 이러한 유형의 Admission Controller를 `Mutating Controller`라고 한다.
 
-* Mission Controller는 요청을 확인하고 허용하거나 거부할 수 있는 컨트롤러
-* Mutating Controller는 요청을 변경하고 유효성을 검사 할수 있는 컨트롤러
+- Mission Controller는 요청을 확인하고 허용하거나 거부할 수 있는 컨트롤러
+- Mutating Controller는 요청을 변경하고 유효성을 검사 할수 있는 컨트롤러
 
 > 순서는 Mutation -> Mission
 
 **Custom Admission Controller가 필요할 경우**
 
-* Webhook
-  * k8s 클러스터 내에서 호스팅 되는 서버를 가리키도록 웹 훅을 구성할 수 있음
-* Validating
+- Webhook
+  - k8s 클러스터 내에서 호스팅 되는 서버를 가리키도록 웹 훅을 구성할 수 있음
+- Validating
 
 **How?**
 
 자체 로직이 있는 웹 서버를 배포
 
-* 예제 코드는 k8s Doc 참조
-* 변경을 수락하고 API를 확인하고 해당 JSON으로 응답해야 됌
-* 호스팅을 위해서 서버를 실행하거나 Container하여 K8s 클러스터 내 배포
-* `service`배포
+- 예제 코드는 k8s Doc 참조
+- 변경을 수락하고 API를 확인하고 해당 JSON으로 응답해야 됌
+- 호스팅을 위해서 서버를 실행하거나 Container하여 K8s 클러스터 내 배포
+- `service`배포
 
 > 시험에서는 코드 개발 X, 배포 서버로 수신 및 응답만 시험
 
@@ -101,20 +101,20 @@ ExecStart=/usr/local/bin/kube-apiverser \\
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
-  name: "pod-policy.example.com"
+  name: 'pod-policy.example.com'
 webhooks:
-- name: "pod-policy.example.com"
-  clientConfig:
-    service:
-      namespace: "webhook-namespcae"
-      name: "webhook-service"
-    caBundle: "Ci0t"
-  rules:
-    - apiGroups: [""]
-    - apiVersions: ["v1"]
-    - operations: ["CRETATE"]
-    - resources: ["pods"]
-    - scope: "Namespaced"
+  - name: 'pod-policy.example.com'
+    clientConfig:
+      service:
+        namespace: 'webhook-namespcae'
+        name: 'webhook-service'
+      caBundle: 'Ci0t'
+    rules:
+      - apiGroups: ['']
+      - apiVersions: ['v1']
+      - operations: ['CRETATE']
+      - resources: ['pods']
+      - scope: 'Namespaced'
 ```
 
 #### API Version
@@ -123,18 +123,18 @@ API 아래의 모든 것이 앱, 확장, 네트워킹과 같은 API그룹이다.
 
 API그룹마다 버전이 다르다.
 
-API그룹이  `V1`에 있으면 안정적인 버전
+API그룹이 `V1`에 있으면 안정적인 버전
 
-* GA/Stable
+- GA/Stable
 
 `Alpha`는 API가 처음 개발 되고 Kubernetes코드 베이스에 병합되어 일부가 되는 때 나타남
 
 `Alpha`그룹은 일반적으로 활성화 되어 있지 않음
 
-* /v1alpha
-* /v1beta1
-* 버그가 있을 수 있고 신뢰할 수 없음.
-* 향후 삭제 가능
+- /v1alpha
+- /v1beta1
+- 버그가 있을 수 있고 신뢰할 수 없음.
+- 향후 삭제 가능
 
 > 알파 버전에서 모든 주요 버그가 수정되고 테스트가 완료되면 베타 단계로 이동. 향후 GA로 이동할 수 있음
 >
@@ -155,18 +155,18 @@ ExecStart=/usr/local/bin/kube-apiserver \\
 
 **API 그룹의 수명 주기**
 
-* API요소는 API그룹의 버전을 높여야만 제거 할 수 있다.
-* API 객체는 정보 손실 없이 주어진 릴리스의 API버전 간에 왕복할 수 있어야 한다.
-* 각 트랙의 최신 API 버전 이외의 이전 API 버전은 발표된 사용 중단 아래 릴리스 기간동안만 지원된다. ( 9 ~ 12 개월)
-    * GA: 12 months or 3 releases
-    * Beta: 9 months or 3 releases
-    * Alpha: 0 release
+- API요소는 API그룹의 버전을 높여야만 제거 할 수 있다.
+- API 객체는 정보 손실 없이 주어진 릴리스의 API버전 간에 왕복할 수 있어야 한다.
+- 각 트랙의 최신 API 버전 이외의 이전 API 버전은 발표된 사용 중단 아래 릴리스 기간동안만 지원된다. ( 9 ~ 12 개월)
+  - GA: 12 months or 3 releases
+  - Beta: 9 months or 3 releases
+  - Alpha: 0 release
 
 > 최신 버전을 출시 할 떄 이전 버전을 더 이상 사용하지 않고 제거해야됨. 이는 모든 버전을 사용할 수 있어야 되는 것을 보장하는 것은 아니다.
 >
 > 릴리즈 시 제거 버전에 관련하여 사용자에게 알려야 한다.
 
-* 지정된 그룹에 대한 기본 API 버전과 스토리지 버전을 명시하고 있기 때문에 새버전과 ㅏ이전 버전을 모두 지원하는 릴리스가 나올때까지 진행되지 않을 수 있다.
+- 지정된 그룹에 대한 기본 API 버전과 스토리지 버전을 명시하고 있기 때문에 새버전과 ㅏ이전 버전을 모두 지원하는 릴리스가 나올때까지 진행되지 않을 수 있다.
 
 **변경 명령어**
 
@@ -198,10 +198,10 @@ spec:
 
 이 API를 호출하기 위해서는 `controller`가 필요하다.
 
-* 사용자 지정 리소스 (정의)
-* 사용자 지정 컨트롤러 (작업)
+- 사용자 지정 리소스 (정의)
+- 사용자 지정 컨트롤러 (작업)
 
-사용자 지정 리소스를  생성할려고 하면 실패한다.
+사용자 지정 리소스를 생성할려고 하면 실패한다.
 
 먼저 생성할려는 리소스가 무엇인지 정의해야 함.
 
@@ -242,16 +242,16 @@ spec:
 
 #### Custom Controllers
 
-* 모니터링(특정개체의 이벤트 수신)
-* 작업(비행기 예약)
+- 모니터링(특정개체의 이벤트 수신)
+- 작업(비행기 예약)
 
 **만드는 방법**
 
-* [샘플컨트롤러](https://github.com/kubernetes/sample-controller) github repositiory확인 후 복사
+- [샘플컨트롤러](https://github.com/kubernetes/sample-controller) github repositiory확인 후 복사
 
-* go 빌드
-* 컨트롤러 생성
-* 배포를 직접하거나 컨테이너화 하여 k8s에 넣을 수 있음
+- go 빌드
+- 컨트롤러 생성
+- 배포를 직접하거나 컨테이너화 하여 k8s에 넣을 수 있음
 
 ```bash
 ./sample-controller --kubeconfig=$HOME/.kube/config
@@ -265,15 +265,15 @@ spec:
 
 **CRD**
 
-* EtcdCluster
-* EtcdBackup
-* EtcdRestore
+- EtcdCluster
+- EtcdBackup
+- EtcdRestore
 
 **Custom Controller**
 
-* ETCD Controller
-* Backup Operator
-* Restore Operator
+- ETCD Controller
+- Backup Operator
+- Restore Operator
 
 #### Deployment Strategy
 
@@ -314,14 +314,14 @@ k8s object들을 배포하는 것은 복잡한 일이다. 단순하게 배포 �
 
 requirement
 
-* k8s
-* kubectl
+- k8s
+- kubectl
 
 **more**
 
 `value.yaml`을 사용하여 value를 overwrap 할수 있다.
 
-템플릿 +  yaml의 조합
+템플릿 + yaml의 조합
 
 helm Chart를 구성한다.
 

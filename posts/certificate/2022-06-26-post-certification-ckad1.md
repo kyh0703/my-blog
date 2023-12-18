@@ -1,26 +1,26 @@
 ---
 published: true
-title: "CKAD 자격증 따기 - 1"
-categories:
+title: 'CKAD 자격증 따기 - 1'
+category:
   - Certificate
 tags:
   - [certificate, CKAD]
 toc: true
 toc_sticky: true
-date: "2022-06-26 19:30"
+date: '2022-06-26 19:30'
 ---
 
 #### Multi-Container Pods
 
 `엠버서더 컨테이너`는 다양한 개발 단계에서 서로 다른 데이터베이스 인스턴스와 통신한다 하였을 때 새로운 컨테이너는 요청을 프록시 하는 것을 앰버서더 컨테이너라고 한다.
 
-* 엠버서더 패턴
-  * 소비자 서비스 또는 응용 프로그램을 대신하여 네트워크 요청을 전송하는 도우미 서비스를 만드는 패턴
-* 사이트카 패턴
-  * 로그 애플리케이션을 따로 배포 하여 수집
-* 어댑터 패턴
-  * 
-* 대사 패턴
+- 엠버서더 패턴
+  - 소비자 서비스 또는 응용 프로그램을 대신하여 네트워크 요청을 전송하는 도우미 서비스를 만드는 패턴
+- 사이트카 패턴
+  - 로그 애플리케이션을 따로 배포 하여 수집
+- 어댑터 패턴
+  -
+- 대사 패턴
 
 #### InitContainers
 
@@ -35,16 +35,26 @@ metadata:
     app: myapp
 spec:
   containers:
-  - name: myapp-container
-    image: busybox:1.28
-    command: ['sh', '-c', 'echo The app is running! && sleep 3600']
+    - name: myapp-container
+      image: busybox:1.28
+      command: ['sh', '-c', 'echo The app is running! && sleep 3600']
   initContainers:
-  - name: init-myservice
-    image: busybox:1.28
-    command: ['sh', '-c', "until nslookup myservice.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
-  - name: init-mydb
-    image: busybox:1.28
-    command: ['sh', '-c', "until nslookup mydb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
+    - name: init-myservice
+      image: busybox:1.28
+      command:
+        [
+          'sh',
+          '-c',
+          'until nslookup myservice.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done',
+        ]
+    - name: init-mydb
+      image: busybox:1.28
+      command:
+        [
+          'sh',
+          '-c',
+          'until nslookup mydb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done',
+        ]
 ```
 
 #### Readiness Probes
@@ -88,20 +98,20 @@ metadata:
     name: simple-webapp
 spec:
   containers:
-  - name: simple-webapp
-    image: simple-webapp
-    ports:
-      - containerPort: 8080
-    readinessProbe:
-      httpGet:
-        path: /ap/ready
-        port: 8080
-      initialDelaySeconds: 10 # 추가 지연
-      preiodSeconds: 5 # 조사 기간
-      failureThredsHold: 8 # 실패 임계값
+    - name: simple-webapp
+      image: simple-webapp
+      ports:
+        - containerPort: 8080
+      readinessProbe:
+        httpGet:
+          path: /ap/ready
+          port: 8080
+        initialDelaySeconds: 10 # 추가 지연
+        preiodSeconds: 5 # 조사 기간
+        failureThredsHold: 8 # 실패 임계값
 ```
 
-* http
+- http
 
 ```yaml
 readinessProbe:
@@ -110,7 +120,7 @@ readinessProbe:
     port: 8080
 ```
 
-* tcp
+- tcp
 
 ```yaml
 readinessProbe:
@@ -118,7 +128,7 @@ readinessProbe:
     port: 3306
 ```
 
-* exec Command
+- exec Command
 
 ```yaml
 readinessProbe:
@@ -177,7 +187,7 @@ kind: CronJob
 metadata:
   name: reporting-cron-job
 sepc:
-  Schedule: "*/1 * * * *"
+  Schedule: '*/1 * * * *'
   jobTemplate:
     sepc:
       completions: 3
@@ -190,8 +200,3 @@ sepc:
               command: ['expre', '3', '+', '2']
           restartPolicy: Newver
 ```
-
-
-
-
-

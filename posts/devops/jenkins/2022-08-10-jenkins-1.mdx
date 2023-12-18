@@ -1,20 +1,20 @@
 ---
 published: true
-title: "jenkins - 기초구성"
-categories:
+title: 'jenkins - 기초구성'
+category:
   - Jenkins
 tags:
   - [jenkins]
 toc: true
 toc_sticky: true
-date: "2022-08-08 11:00"
+date: '2022-08-08 11:00'
 ---
 
 ### SSH 리모트 호스트 제어하기
 
 SSH로 리모트 호스트를 제어하기 위해선 SSH 플러그인을 먼저 설치해줍니다.
 
- SSH HOST를 추가합니다.
+SSH HOST를 추가합니다.
 
 ### Jenkins & Maven(CENTOS7)
 
@@ -24,7 +24,7 @@ SSH로 리모트 호스트를 제어하기 위해선 SSH 플러그인을 먼저 
 yum install -y epel-release
 ```
 
-2. java  설치
+2. java 설치
 
 ```bash
 yum install java-11-openjdk-devel.x86_64
@@ -46,7 +46,7 @@ JAVA_HOME=/lib/jvm/java-11-openjdk-11.0.10.0.9-1.el7_9.x86_64
 
 PATH=$PATH:$HOME/bin:$JAVA_HOME:$M2_HOME:$M2
 
-export PATH                     
+export PATH
 ```
 
 4. maven 플러그인 설치
@@ -63,8 +63,8 @@ export PATH
 
 ### Jenkins & Git
 
-* Poll SCM: 빌드 정책에 따라 지속적 확인(cronjob)
-* BUild Periodically: 지속적인 감시
+- Poll SCM: 빌드 정책에 따라 지속적 확인(cronjob)
+- BUild Periodically: 지속적인 감시
 
 빌드가 주기적으로 감시하여 변경사항이 있으면 재 빌드 시킴.
 

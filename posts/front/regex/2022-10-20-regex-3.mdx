@@ -1,27 +1,27 @@
 ---
 published: true
-title: "regex - 공백 문자 및 문자열 경계"
-categories:
+title: 'regex - 공백 문자 및 문자열 경계'
+category:
   - Regex
 tags:
   - [regex, udemy]
 toc: true
 toc_sticky: true
-date: "2022-10-20 23:00"
+date: '2022-10-20 23:00'
 ---
 
 ### 공백 문자
 
-* 백슬래쉬는(`\`) 특수문자를 표기할 때 사용한다.
+- 백슬래쉬는(`\`) 특수문자를 표기할 때 사용한다.
 
-* 또한 공백문자를 지정하는데도 사용한다
+- 또한 공백문자를 지정하는데도 사용한다
 
-  | \t   | tab character   |
-  | ---- | --------------- |
-  | \n   | new line        |
-  | \r   | carrigae return |
-  | \f   | line feed       |
-  | \v   | vertical tab    |
+  | \t  | tab character   |
+  | --- | --------------- |
+  | \n  | new line        |
+  | \r  | carrigae return |
+  | \f  | line feed       |
+  | \v  | vertical tab    |
 
 > 캐리지 리턴은 기계식 키보드로 라인을 전진시키지 않고 처음으로 이동
 >
@@ -31,7 +31,7 @@ date: "2022-10-20 23:00"
 >
 > 예시) window \r\n
 
-* 그렇다면 공백 문자는?
+- 그렇다면 공백 문자는?
 
 공백 문자는 그냥 뛰우면 된다.
 
@@ -41,12 +41,12 @@ const regex = / +.*
 
 ### 문자열 경계
 
-| ^    | anchor at start of string |
-| ---- | ------------------------- |
-| $    | anchor at end of string   |
+| ^   | anchor at start of string |
+| --- | ------------------------- |
+| $   | anchor at end of string   |
 
-* 이들은 어떤 개별 문자와도 일치하지 않는다
-* 단순히 문자열이 어디에 있는지만 지정함
+- 이들은 어떤 개별 문자와도 일치하지 않는다
+- 단순히 문자열이 어디에 있는지만 지정함
 
 **시작 문자**
 
@@ -80,4 +80,3 @@ const regex = /[A-Z][^\.?!]+[\.?!]/
 // O This is asdfasdf testaer.
 const regex = /^[A-Z][^\.?!]+[\.?!]$/
 ```
-

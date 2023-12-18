@@ -1,13 +1,10 @@
 ---
-published: true
-title: "CKA 자격증 따기 - day4"
-categories:
-  - Certificate
+title: CKA 자격증 따기 - day4
+category: certificate
 tags:
-  - [certificate, CKA]
-toc: true
-toc_sticky: true
-date: "2022-04-17 12:00"
+  - certificate
+  - cka
+date: 2022-04-17
 ---
 
 #### Service
@@ -253,7 +250,7 @@ spec:
 status:
   conditions:
     - lastProbeTime: null
-      status: "True"
+      status: 'True'
       type: Initialized
 ```
 
@@ -384,10 +381,10 @@ spec:
     - name: nginx-continaer
       image: nginx
   tolerations:
-    - key: "app"
-      operator: "Equal"
-      value: "blue"
-      effect: "NoSchedule"
+    - key: 'app'
+      operator: 'Equal'
+      value: 'blue'
+      effect: 'NoSchedule'
 ```
 
 #### 시험 팁

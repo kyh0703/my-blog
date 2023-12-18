@@ -1,13 +1,13 @@
 ---
 published: true
-title: "CKS - Preview"
-categories:
+title: 'CKS - Preview'
+category:
   - Certificate
 tags:
   - [certificate, CKS]
 toc: true
 toc_sticky: true
-date: "2023-01-09 12:00"
+date: '2023-01-09 12:00'
 ---
 
 #### CKS 시작 전 준비

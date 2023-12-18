@@ -1,13 +1,13 @@
 ---
 published: true
-title: "istio - Circuit Breakers"
-categories:
+title: 'istio - Circuit Breakers'
+category:
   - Istio
 tags:
   - [istio]
 toc: true
 toc_sticky: true
-date: "2022-08-04 16:15"
+date: '2022-08-04 16:15'
 ---
 
 #### Circuit Breakers
@@ -22,7 +22,7 @@ kind: DestinationRule
 metadata:
   name: circuit-breaker-for-the-entire-default-namespace
 spec:
-  host: "fleetman-staff-service.default.svc.cluster.local" # This is the name of the k8s service that we're configuring
+  host: 'fleetman-staff-service.default.svc.cluster.local' # This is the name of the k8s service that we're configuring
 
   trafficPolicy:
     outlierDetection: # Circuit Breakers HAVE TO BE SWITCHED ON

@@ -1,13 +1,13 @@
 ---
 published: true
-title: "Ansible - connection & delegate-to"
-categories:
+title: 'Ansible - connection & delegate-to'
+category:
   - Ansible
 tags:
   - [devops, Ansible]
 toc: true
 toc_sticky: true
-date: "2022-07-04 19:30"
+date: '2022-07-04 19:30'
 ---
 
 ### connction & delegate-to
@@ -16,7 +16,7 @@ date: "2022-07-04 19:30"
 
 **상황별 처리 예시**
 
-* 특정 노드에서 호스트 정보를 취합 후 사용
+- 특정 노드에서 호스트 정보를 취합 후 사용
 
 ```yaml
 - name: RKE Known hosts
@@ -24,7 +24,7 @@ date: "2022-07-04 19:30"
   delegate_to: rke_master1
 ```
 
-* known_hosts
+- known_hosts
 
 ```yaml
 - name: known hosts

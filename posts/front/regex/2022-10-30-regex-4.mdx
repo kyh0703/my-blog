@@ -1,20 +1,20 @@
 ---
 published: true
-title: "regex - 문자 클래스"
-categories:
+title: 'regex - 문자 클래스'
+category:
   - Regex
 tags:
   - [regex, udemy]
 toc: true
 toc_sticky: true
-date: "2022-10-30 22:00"
+date: '2022-10-30 22:00'
 ---
 
 ### 공백 문자 클래스
 
 `.` 뉴 라인을 제외한 모든 문자들을 대표한다.
 
-그렇다면 모든 공백 문자들은 어떻게 표현할 수 있을까? 
+그렇다면 모든 공백 문자들은 어떻게 표현할 수 있을까?
 
 ```js
 const regex = /[\r\n\t\v\f]/
@@ -46,20 +46,20 @@ const regex = / ^\S+/
 
 ### 기타 문자 클래스
 
-| \s   | whitespcae         | [\r\n\t\v\f]                        |
-| ---- | ------------------ | ----------------------------------- |
-| \S   | not whitespace     | [^\r\n\t\v\f]                       |
-| \d   | digit              | [0-9]                               |
-| \D   | not digit          | [^0-9]                              |
-| \w   | word character     | [0-9A-Za-z_]                        |
-| \W   | not word character | [^0-9A-Za-z_]                       |
-| \b   | word boundary      | \b \w이전과 이후는 \W이거나 그\w    |
-| \B   | not word boundary  | 경계 앞 뒤가 둘 다 \w이거나 그 반대 |
+| \s  | whitespcae         | [\r\n\t\v\f]                        |
+| --- | ------------------ | ----------------------------------- |
+| \S  | not whitespace     | [^\r\n\t\v\f]                       |
+| \d  | digit              | [0-9]                               |
+| \D  | not digit          | [^0-9]                              |
+| \w  | word character     | [0-9A-Za-z_]                        |
+| \W  | not word character | [^0-9A-Za-z_]                       |
+| \b  | word boundary      | \b \w이전과 이후는 \W이거나 그\w    |
+| \B  | not word boundary  | 경계 앞 뒤가 둘 다 \w이거나 그 반대 |
 
 ### 단어 경계 문자
 
-* `\b, \B`는 문자를 소비하지 않는다
-  * ^ and $와 비슷하게 어떤 문자를 매치하지는 않는다.
+- `\b, \B`는 문자를 소비하지 않는다
+  - ^ and $와 비슷하게 어떤 문자를 매치하지는 않는다.
 
 예시)
 
@@ -83,9 +83,9 @@ const regex = /\Bstem\B/
 
 #### \b 와 \W 차이점
 
-* 경계 문자는 경계 문자를 매치에 포함 시키지 않는다.
-* 즉 경계에 실제 문자가 없어도 경계가 동작함
-  * 처음이거나 끝 일 때도..
+- 경계 문자는 경계 문자를 매치에 포함 시키지 않는다.
+- 즉 경계에 실제 문자가 없어도 경계가 동작함
+  - 처음이거나 끝 일 때도..
 
 ```js
 // [testcase]
@@ -116,7 +116,7 @@ const regex = /^\w.*\D$/
 
 ```js
 // kyh0703.atester@nate.ad.com
-const emailRegex = /^[\w\.]+@[\w\.]+\.[\w]+$/;
+const emailRegex = /^[\w\.]+@[\w\.]+\.[\w]+$/
 ```
 
 #### 주의 사항
@@ -127,7 +127,7 @@ const emailRegex = /^[\w\.]+@[\w\.]+\.[\w]+$/;
 
 ` /(?<=[^가-힣])대상문자(?=[^가-힣])/`
 
- (자음과 모음까지 문자로 인식하려고 한다면, [^ㄱ-ㅎㅏ-ㅣ가-힣] 를 사용하면 된다)
+(자음과 모음까지 문자로 인식하려고 한다면, [^ㄱ-ㅎㅏ-ㅣ가-힣] 를 사용하면 된다)
 
 #### 참조
 

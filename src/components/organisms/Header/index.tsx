@@ -33,7 +33,7 @@ const Header = () => {
             </Link>
           </NavLink>
           <NavLink>Blog</NavLink>
-          <NavLink>Categories</NavLink>
+          <NavLink>category</NavLink>
         </Nav>
         <Nav>
           <Clock />

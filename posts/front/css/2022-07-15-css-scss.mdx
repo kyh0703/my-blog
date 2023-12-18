@@ -1,25 +1,25 @@
 ---
 published: true
-title: "css - scss"
-categories:
+title: 'css - scss'
+category:
   - CSS
 tags:
   - [css, nomadcoders]
 toc: true
 toc_sticky: true
-date: "2022-07-15 21:00"
+date: '2022-07-15 21:00'
 ---
 
 ### SCSS
 
 **SCSS**
 
-* 기본적으로 `CSS preprocessor`이다.
+- 기본적으로 `CSS preprocessor`이다.
 
-* CSS 프로그래밍 랭귀지로 만든다
+- CSS 프로그래밍 랭귀지로 만든다
 
-* 컴파일-빌드 단계가 필요하다.
-* 업계 표준이다.
+- 컴파일-빌드 단계가 필요하다.
+- 업계 표준이다.
 
 #### variable
 
@@ -27,7 +27,7 @@ web에서 중요한 `color`이나 `style`을 저장할 때 사용
 
 **적용**
 
-* src/scss/_variables.scss 파일 생성
+- src/scss/\_variables.scss 파일 생성
 
 ```scss
 $bg: #e7473c;
@@ -35,10 +35,10 @@ $bg: #e7473c;
 
 > 밑줄이 있는 파일은 `css`로 변환하지 않기위해 명시
 
-* styles.scss 적용
+- styles.scss 적용
 
 ```scss
-@import "_variables";
+@import '_variables';
 
 body {
   background: $bg;
@@ -47,7 +47,7 @@ body {
 
 #### Nesting
 
-* 타겟하는 `element`를 정확하게 함
+- 타겟하는 `element`를 정확하게 함
 
 ```scss
 .box {
@@ -75,13 +75,13 @@ css결과 값을 프로그래밍으로 바꿈
 
 > 상황에 따라 다르게 코딩을 하고 싶으면 사용
 
-* src/scss/_mixins.scss
+- src/scss/\_mixins.scss
 
 ```scss
 @mixin link($word) {
   text-decoration: none;
   display: block;
-  @if $word == "odd" {
+  @if $word == 'odd' {
     color: blue;
   } @else {
     color: red;
@@ -89,22 +89,21 @@ css결과 값을 프로그래밍으로 바꿈
 }
 ```
 
-* src/scss/style.scss
+- src/scss/style.scss
 
 ```scss
-@import "_variables";
-@import "_mixins";
+@import '_variables';
+@import '_mixins';
 
 a {
   margin-bottom: 10px;
   &:nth-child(odd) {
-    @include link("odd");
+    @include link('odd');
   }
   &:nth-child(even) {
-    @include link("even");
+    @include link('even');
   }
 }
-
 ```
 
 #### Extends
@@ -113,7 +112,7 @@ a {
 
 > 같은 코드를 중복하고 싶지 않을 때 사용
 
-* src/scss/_button.scss
+- src/scss/\_button.scss
 
 ```scss
 %button {
@@ -128,10 +127,10 @@ a {
 }
 ```
 
-* src/scss/styles.scss
+- src/scss/styles.scss
 
 ```scss
-@import "_buttons";
+@import '_buttons';
 
 a {
   @extend %button;
@@ -146,7 +145,7 @@ button {
 
 #### Responsive Mixins
 
-* minxins
+- minxins
 
 ```scss
 $minIphone: 500px;
@@ -155,44 +154,43 @@ $minTablet: $minIphone + 1;
 $maxTablet: 1120px;
 
 @mixin responsive($device) {
-  @if $device == "iphone" {
+  @if $device == 'iphone' {
     @media screen and (min-width: $minIphone) and (max-width: $maxIphone) {
       @content;
     }
-  } @else if $device == "tablet" {
+  } @else if $device == 'tablet' {
     @media screen and (min-width: $minTablet) and (max-width: $maxTablet) {
       @content;
     }
-  } @else if $device == "iphone-l" {
+  } @else if $device == 'iphone-l' {
     @media screen and (max-width: $minIphone) and (max-width: $maxIphone) and (orientation: landscape) {
       @content;
     }
-  } @else if $device == "ipad-l" {
+  } @else if $device == 'ipad-l' {
     @media screen and (max-width: $minTablet) and (max-width: $maxTablet) and (orientation: landscape) {
       @content;
     }
   }
 }
-
 ```
 
-* style.scss
+- style.scss
 
 ```scss
-@import "_mixins";
+@import '_mixins';
 
 h1 {
   color: red;
-  @include responsive("iphone") {
+  @include responsive('iphone') {
     color: yellow;
   }
-  @include responsive("iphone-l") {
+  @include responsive('iphone-l') {
     font-size: 60px;
   }
-  @include responsive("tablet") {
+  @include responsive('tablet') {
     color: green;
   }
-  @include responsive("tablet-l") {
+  @include responsive('tablet-l') {
     font-size: 60px;
   }
 }
@@ -202,6 +200,6 @@ h1 {
 
 [AWESOME-SCSS](https://github.com/colourgarden/awesome-scss)
 
-* Bourbon
-* Sass MediaQueries
-* animate
+- Bourbon
+- Sass MediaQueries
+- animate

@@ -35,7 +35,7 @@ export default meta
 type Story = StoryObj<typeof FilterGroup>
 
 export const Standard: Story = {
-  render: args => {
+  render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [value, setValue] = useState<string[]>([])
     const handleChange = (value: string[]) => {
@@ -46,7 +46,7 @@ export const Standard: Story = {
     return <FilterGroup value={value} onChange={handleChange} {...args} />
   },
   args: {
-    title: 'All categories',
+    title: 'All category',
     items: [
       { label: 'clothes', name: 'clothes' },
       { label: 'books', name: 'books' },

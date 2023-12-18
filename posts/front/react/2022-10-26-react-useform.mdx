@@ -1,13 +1,13 @@
 ---
 published: true
-title: "react - useform"
-categories:
+title: 'react - useform'
+category:
   - React
 tags:
   - [react, useform]
 toc: true
 toc_sticky: true
-date: "2022-10-26 14:20"
+date: '2022-10-26 14:20'
 ---
 
 ### useForm()
@@ -47,13 +47,13 @@ const LoginForm = () => {
 
 #### 사용법
 
-* `yarn`으로 사용할 패키지들을 설치하여 줍니다.
+- `yarn`으로 사용할 패키지들을 설치하여 줍니다.
 
 ```bash
 yarn add react-hook-form yup @hookform/resolvers
 ```
 
-* `검증` 로직 정의
+- `검증` 로직 정의
 
 ```react
 const LoginForm = () => {
@@ -69,7 +69,7 @@ const LoginForm = () => {
 }
 ```
 
-* `useForm`정의
+- `useForm`정의
 
 ```react
 const LoginForm = () => {
@@ -89,7 +89,7 @@ const LoginForm = () => {
 }
 ```
 
-* `params` 정의
+- `params` 정의
 
 ```react
 // src/fetures/auth/authAPI.ts
@@ -99,7 +99,7 @@ export interface LoginUserParams {
 }
 ```
 
-* `register` 등록
+- `register` 등록
 
 ```react
 const LoginForm = () => {
@@ -152,7 +152,7 @@ import Button from '../common/Button';
 const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-    
+
   // validation 정의
   const validationSchema = Yup.object().shape({
     email: Yup.string()

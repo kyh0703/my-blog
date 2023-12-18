@@ -1,13 +1,13 @@
 ---
 published: true
-title: "Ansible - awx사용법"
-categories:
+title: 'Ansible - awx사용법'
+category:
   - Ansible
 tags:
   - [devops, Ansible, awx]
 toc: true
 toc_sticky: true
-date: "2022-07-14 16:30"
+date: '2022-07-14 16:30'
 ---
 
 ### AWX 사용법
@@ -38,30 +38,28 @@ rke_worker1 ansible_host=100.100.103.179 ansible_ssh_pass=1234
 
 인벤토리는 실제 위에 기술된 `inventory`파일과 같다고 보면 됩니다.
 
-* "Add" > "Add Inventory " 클릭하여 인벤토리를 추가합니다.
+- "Add" > "Add Inventory " 클릭하여 인벤토리를 추가합니다.
 
 ![image-20220714170859027](../../../assets/images/posts/2022-07-14-post-install-ansible4/image-20220714170859027.png)
 
-* 인벤토리 추가 후 "Save" 클릭
+- 인벤토리 추가 후 "Save" 클릭
 
 ![image-20220714171052428](../../../assets/images/posts/2022-07-14-post-install-ansible4/image-20220714171052428.png)
 
-* "Save"를 누르면 다음과 같은 화면이 생기며, "Groups"를 선택하여 "Add"를 눌러 그룹을 추가합니다.
+- "Save"를 누르면 다음과 같은 화면이 생기며, "Groups"를 선택하여 "Add"를 눌러 그룹을 추가합니다.
 
 ![image-20220714171215361](../../../assets/images/posts/2022-07-14-post-install-ansible4/image-20220714171215361.png)
 
-* 그룹을 생성하여줍니다.
+- 그룹을 생성하여줍니다.
 
 ```yaml
 [rke_masters] # group은 이부분을 의미합니다.
 rke_master1 ansible_host=100.100.103.178 ansible_ssh_pass=1234
 ```
 
-
-
 ![image-20220714171333478](../../../assets/images/posts/2022-07-14-post-install-ansible4/image-20220714171333478.png)
 
-* 그룹에 호스트를 매핑 시켜줍니다.
+- 그룹에 호스트를 매핑 시켜줍니다.
 
 ![image-20220714171448348](../../../assets/images/posts/2022-07-14-post-install-ansible4/image-20220714171448348.png)
 
@@ -74,11 +72,11 @@ Host는 우리가 `ansible`을 통해 프로비저닝 할 정보들을 입력합
 rke_master1 ansible_host=100.100.103.178 ansible_ssh_pass=1234 # host 정보
 ```
 
-* `Add`를 눌러 `Host`를 추가합니다.
+- `Add`를 눌러 `Host`를 추가합니다.
 
 ![image-20220714170545563](../../../assets/images/posts/2022-07-14-post-install-ansible4/image-20220714170545563.png)
 
-* 다음과 같이 호스트 정보를 입력합니다.
+- 다음과 같이 호스트 정보를 입력합니다.
 
 ![image-20220714170632538](../../../assets/images/posts/2022-07-14-post-install-ansible4/image-20220714170632538.png)
 

@@ -1,13 +1,13 @@
 ---
 published: true
-title: "CKAD 자격증 따기 - 시험 후기(v1.23.1)"
-categories:
+title: 'CKAD 자격증 따기 - 시험 후기(v1.23.1)'
+category:
   - Certificate
 tags:
   - [certificate, CKAD]
 toc: true
 toc_sticky: true
-date: "2022-07-02 12:30"
+date: '2022-07-02 12:30'
 ---
 
 #### 시험후기
