@@ -1,15 +1,9 @@
 ---
-published: true
-title: '도커(3) - Command'
-excerpt: 도커 명령어 친숙해지기
-category:
-  - Docker
+title: 도커(3) - Command
+category: docker
 tags:
-  - [docker, docker command]
-toc: true
-toc_sticky: true
-date: '2021-09-12 19:00'
-last_modified_at: 2021-09-12T23:00:00.540Zs
+  - docker
+date: 2021-09-12
 ---
 
 ### 간단하게 배우는 도커 사용법

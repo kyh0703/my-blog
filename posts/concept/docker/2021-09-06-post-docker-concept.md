@@ -1,15 +1,10 @@
 ---
-published: true
-title: '도커(1) - Docker'
-excerpt: docker 개념 쉽게 이해해보기
-category:
-  - Docker
+title: 도커(1) - Docker
+category: docker
 tags:
-  - [docker, container]
-toc: true
-toc_sticky: true
-date: '2021-09-06 23:00'
-last_modified_at: 2021-09-06T23:00:00.540Z
+  - docker
+  - container
+date: 2021-09-06
 ---
 
 ### docker 너는 무엇인가!

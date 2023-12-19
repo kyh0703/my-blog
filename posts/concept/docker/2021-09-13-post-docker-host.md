@@ -1,15 +1,9 @@
 ---
-published: true
-title: '도커(4) - Host'
-excerpt: 도커 호스트와 연결고리
-category:
-  - Docker
+title: 도커(4) - Host
+category: docker
 tags:
-  - [docker, docker network]
-toc: true
-toc_sticky: true
-date: '2021-09-13 19:00'
-last_modified_at: 2021-09-13T23:00:00.540Zs
+  - docker
+date: 2021-09-13
 ---
 
 ### 도커와 호스트

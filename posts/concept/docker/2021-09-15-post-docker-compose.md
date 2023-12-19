@@ -1,15 +1,9 @@
 ---
-published: true
-title: '도커(5) - docker-compose'
-excerpt: 도커 마술사
-category:
-  - Docker
+title: 도커(5) - docker-compose
+category: docker
 tags:
-  - [docker, docker-compose]
-toc: true
-toc_sticky: true
-date: '2021-09-15 19:00'
-last_modified_at: 2021-09-15T23:00:00.540Zs
+  - docker
+date: 2021-09-15
 ---
 
 ### 개발 환경 구성을 할 수 있다!

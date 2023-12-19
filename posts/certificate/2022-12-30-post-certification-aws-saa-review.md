@@ -1,13 +1,11 @@
 ---
-published: true
-title: 'AWS SAA-C03 - 후기'
-category:
-  - Certificate
+title: AWS SAA-C03 - 후기
+category: certificate
 tags:
-  - [certificate, AWS, SAA-C03]
-toc: true
-toc_sticky: true
-date: '2022-12-15 12:00'
+  - certificate
+  - aws
+  - saa-c03
+date: 2022-12-15
 ---
 
 #### AWS Certified Solutions Architect 후기

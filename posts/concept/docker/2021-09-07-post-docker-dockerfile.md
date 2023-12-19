@@ -1,15 +1,11 @@
 ---
-published: true
-title: '도커(2) - Dockerfile'
-excerpt: 이미지를 만드는 도커파일
-category:
-  - Docker
+title: 도커(2) - Dockerfile
+category: docker
 tags:
-  - [docker, container, dockerfile]
-toc: true
-toc_sticky: true
-date: '2021-09-07 23:00'
-last_modified_at: 2021-09-07T23:00:00.540Zs
+  - docker
+  - container
+  - dockerfile
+date: 2021-09-07 23:00
 ---
 
 ### 도커의 컨테이너는 어떻게 만들어지는가?
