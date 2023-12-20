@@ -1,4 +1,8 @@
-import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import {
+  defineDocumentType,
+  defineNestedType,
+  makeSource,
+} from 'contentlayer/source-files'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 import rehypeAutolinkHeadings, {
@@ -7,6 +11,13 @@ import rehypeAutolinkHeadings, {
 import rehypePrettyCode, {
   type Options as PrettyCodeOptions,
 } from 'rehype-pretty-code'
+
+const Tag = defineNestedType(() => ({
+  name: 'Tag',
+  fields: {
+    title: { type: 'string' },
+  },
+}))
 
 const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -29,7 +40,7 @@ const Post = defineDocumentType(() => ({
     },
     tags: {
       type: 'list',
-      of: { type: 'string' },
+      of: Tag,
       required: true,
     },
   },
