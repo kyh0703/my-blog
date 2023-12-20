@@ -1,9 +1,7 @@
 ---
 title: CKS - Preview
 category: certificate
-tags:
-  - certificate
-  - cks
+tags: [cks, kubernetes]
 date: 2023-01-09
 ---
 

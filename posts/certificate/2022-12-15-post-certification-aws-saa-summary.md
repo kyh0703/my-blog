@@ -1,10 +1,7 @@
 ---
 title: AWS SAA-C03 - 정리
 category: certificate
-tags:
-  - certificate
-  - aws
-  - saa-c03
+tags: [aws, saa-c03]
 date: 2022-12-15
 ---
 

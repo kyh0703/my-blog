@@ -1,11 +1,8 @@
 ---
 title: 도커(2) - Dockerfile
-category: docker
-tags:
-  - docker
-  - container
-  - dockerfile
-date: 2021-09-07 23:00
+category: concept
+tags: [docker, dockerfile]
+date: 2021-09-07
 ---
 
 ### 도커의 컨테이너는 어떻게 만들어지는가?

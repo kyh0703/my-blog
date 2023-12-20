@@ -1,0 +1,110 @@
+---
+title: istio - Routing
+category: devops
+tags: [istio]
+date: 2022-08-03
+---
+
+#### Prefix Routing
+
+- `prefix`를 가지고 라우팅을 핸들링 할 수 있다.
+
+- `prefix routing`을 적용할려면 관련 애플리케이션이 지원을 해줘야 한다.
+- 시험버전을 구분해서 라우팅한다면 지양한다. 서브도메인 추천
+
+```yaml
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: fleetman-webapp
+  namespace: default
+spec:
+  hosts: # which incoming host are we applying the proxy rules to???
+    - '*'
+  gateways:
+    - ingress-gateway-configuration
+  http:
+    - match:
+        - uri: # IF
+            prefix: '/experimental'
+        - uri: # OR
+            prefix: '/canary'
+      route: # THEN
+        - destination:
+            host: fleetman-webapp
+            subset: experimental
+    - match:
+        - uri:
+            prefix: '/'
+      route:
+        - destination:
+            host: fleetman-webapp
+            subset: original
+```
+
+[이스티오문서](https://istio.io/latest/docs/reference/config/networking/virtual-service/)
+
+#### Subdomain Routing
+
+`istio-ingressgateway`를 타야된다.
+
+실험: `experimental.fleetman.com`
+
+일반: `fleetman.com`
+
+```yaml
+---
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: fleetman-webapp
+  namespace: default
+spec:
+  hosts: # which incoming host are we applying the proxy rules to???
+    - 'fleetman.com'
+  gateways:
+    - ingress-gateway-configuration
+  http:
+    - route:
+        - destination:
+            host: fleetman-webapp
+            subset: original
+---
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: fleetman-webapp-experiment
+  namespace: default
+spec:
+  hosts: # which incoming host are we applying the proxy rules to???
+    - 'experimental.fleetman.com'
+  gateways:
+    - ingress-gateway-configuration
+  http:
+    - route:
+        - destination:
+            host: fleetman-webapp
+            subset: experimental
+```
+
+#### Fault Injection
+
+```yaml
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: fleetman-vehicle-telemetry
+  namespace: default
+spec:
+  hosts:
+    - fleetman-vehicle-telemetry
+  http:
+    - fault:
+        abort:
+          httpStatus: 503
+          percentage:
+            value: 100
+      route:
+        - destination:
+            host: fleetman-vehicle-telemetry
+```

@@ -1,8 +1,7 @@
 ---
 title: 도커(3) - Command
-category: docker
-tags:
-  - docker
+category: concept
+tags: [docker]
 date: 2021-09-12
 ---
 
