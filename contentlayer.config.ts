@@ -1,12 +1,4 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
-import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
-import rehypeAutolinkHeadings, {
-  type Options as AutolinkHeadingsOptions,
-} from 'rehype-autolink-headings'
-import rehypePrettyCode, {
-  type Options as PrettyCodeOptions,
-} from 'rehype-pretty-code'
 
 const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -41,25 +33,7 @@ const Post = defineDocumentType(() => ({
   },
 }))
 
-const autolinkHeadingOption: AutolinkHeadingsOptions = {
-  properties: {
-    className: ['anchor'],
-  },
-}
-
-const prettyCodeOptions: PrettyCodeOptions = {
-  theme: {},
-}
-
 export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
-  markdown: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      rehypeSlug,
-      [rehypeAutolinkHeadings, autolinkHeadingOption],
-      [rehypePrettyCode, prettyCodeOptions],
-    ],
-  },
 })

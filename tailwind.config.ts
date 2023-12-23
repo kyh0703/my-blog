@@ -8,9 +8,10 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors,
-    letterSpacing: letterSpacings,
-    extend: {},
+    extend: {
+      colors,
+      letterSpacing: letterSpacings,
+    },
   },
   corePlugins: { preflight: false },
   plugins: [require('@tailwindcss/typography')],

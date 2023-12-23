@@ -2,6 +2,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import remarkGfm from 'remark-gfm'
 
 type MarkdownProps = {
   content?: string
@@ -10,6 +11,7 @@ type MarkdownProps = {
 const Markdown = ({ content }: MarkdownProps) => {
   return (
     <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
       components={{
         code(props) {
           const { children, className, node, ...rest } = props
