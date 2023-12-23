@@ -1,7 +1,8 @@
 ---
 title: Ansible로 서버 관리하기
 category: devops
-tags: [ansible]
+tags:
+  - ansible
 date: 2022-04-07
 ---
 

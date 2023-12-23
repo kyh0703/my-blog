@@ -1,7 +1,8 @@
 ---
 title: istio - 도구
 category: devops
-tags: [istio]
+tags:
+  - istio
 date: 2022-07-25
 ---
 

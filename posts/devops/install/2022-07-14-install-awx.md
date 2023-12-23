@@ -1,7 +1,9 @@
 ---
 title: AWX설치(Docker) - CentOS7
 category: devops
-tags: [ansible, awx]
+tags:
+  - ansible
+  - awx
 date: 2022-07-14
 ---
 

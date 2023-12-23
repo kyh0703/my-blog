@@ -1,7 +1,11 @@
 ---
 title: CentOS8 Yum Repository 설정하기(Kakao, Disk)
 category: devops
-tags: [centos8, repository, kakao, disk]
+tags:
+  - centos8
+  - repository
+  - kakao
+  - disk
 date: 2022-03-23
 ---
 

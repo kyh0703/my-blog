@@ -1,7 +1,8 @@
 ---
 title: jenkins - DSL
 category: devops
-tags: [jenkins]
+tags:
+  - jenkins
 date: 2022-08-24
 ---
 

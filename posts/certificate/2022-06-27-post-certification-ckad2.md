@@ -1,8 +1,10 @@
 ---
 title: CKAD 자격증 따기 - 2
 category: certificate
-tags: [ckad, kubernetes]
-date: 2022-06-27 19:30
+tags:
+  - ckad
+  - kubernetes
+date: 2022-06-27
 ---
 
 ### 2021 Update

@@ -1,7 +1,8 @@
 ---
 title: istio - mTLS
 category: devops
-tags: [istio]
+tags:
+  - istio
 date: 2022-08-04
 ---
 

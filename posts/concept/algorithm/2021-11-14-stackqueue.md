@@ -1,7 +1,10 @@
 ---
 title: 알고리즘 - stack/queue
 category: concept
-tags: [algorithm, stack, queue]
+tags:
+  - algorithm
+  - stack
+  - queue
 date: 2021-11-14
 ---
 

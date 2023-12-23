@@ -1,7 +1,9 @@
 ---
 title: 알고리즘 - 이분탐색
 category: concept
-tags: [algorithm, binarysearch]
+tags:
+  - algorithm
+  - binarysearch
 date: 2022-07-10
 ---
 

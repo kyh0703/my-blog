@@ -1,7 +1,9 @@
 ---
 title: 실용주의 프로그래머 - 7
 category: books
-tags: [book, programming]
+tags:
+  - book
+  - programming
 date: 2022-04-01
 ---
 

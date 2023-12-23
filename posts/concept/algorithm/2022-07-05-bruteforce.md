@@ -1,7 +1,10 @@
 ---
 title: 알고리즘 - 브루트포스
 category: concept
-tags: [algorithm, dfs, bfs]
+tags:
+  - algorithm
+  - dfs
+  - bfs
 date: 2022-07-05
 ---
 

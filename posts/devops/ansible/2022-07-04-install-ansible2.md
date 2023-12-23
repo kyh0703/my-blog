@@ -1,7 +1,8 @@
 ---
 title: Ansible - gather_facts
 category: devops
-tags: [ansible]
+tags:
+  - ansible
 date: 2022-07-04
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: jenkins - 기초구성2
 category: devops
-tags: [jenkins]
+tags:
+  - jenkins
 date: 2022-08-23
 ---
 

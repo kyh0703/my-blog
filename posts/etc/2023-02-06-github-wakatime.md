@@ -1,7 +1,9 @@
 ---
 title: Github Wakatime 연동하기
 category: etc
-tags: [github, wakatime]
+tags:
+  - github
+  - wakatime
 date: 2023-02-06
 ---
 

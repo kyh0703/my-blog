@@ -2,7 +2,8 @@
 title: CKAD 자격증 따기 - 시험 후기(v1.23.1)
 category: certificate
 tags:
-  - [ckad, kubernetes]
+  - ckad
+  - kubernetes
 date: 2022-07-02
 ---
 

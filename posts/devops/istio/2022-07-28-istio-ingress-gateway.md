@@ -1,7 +1,8 @@
 ---
 title: istio - Ingress Gateway
 category: devops
-tags: [istio]
+tags:
+  - istio
 date: 2022-07-28
 ---
 

@@ -1,7 +1,10 @@
 ---
 title: github docker container registry
 category: etc
-tags: [github, container, registry]
+tags:
+  - github
+  - container
+  - registry
 date: 2022-07-05
 ---
 

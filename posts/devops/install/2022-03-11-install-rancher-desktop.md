@@ -1,7 +1,9 @@
 ---
 title: 윈도우10 kubernetes 환경 구성하기(rancher-desktop)
 category: devops
-tags: [kubernetes, rancher-desktop]
+tags:
+  - kubernetes
+  - rancher-desktop
 date: 2022-03-11
 ---
 

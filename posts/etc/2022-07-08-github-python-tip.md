@@ -1,7 +1,8 @@
 ---
 title: python basic tip
 category: etc
-tags: [python]
+tags:
+  - python
 date: 2022-07-08
 ---
 

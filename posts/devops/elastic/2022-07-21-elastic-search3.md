@@ -1,7 +1,8 @@
 ---
 title: Elastic Search - 3
 category: devops
-tags: [elastic]
+tags:
+  - elastic
 date: 2022-07-21
 ---
 

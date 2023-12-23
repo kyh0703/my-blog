@@ -1,7 +1,9 @@
 ---
 title: 도커(1) - Docker
 category: concept
-tags: [docker, container]
+tags:
+  - docker
+  - container
 date: 2021-09-06
 ---
 

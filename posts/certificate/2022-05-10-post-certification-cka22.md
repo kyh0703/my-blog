@@ -1,7 +1,9 @@
 ---
 title: CKA 자격증 따기 - day21
 category: certificate
-tags: [cka, kubernetes]
+tags:
+  - cka
+  - kubernetes
 date: 2022-05-10
 ---
 

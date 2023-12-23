@@ -1,7 +1,9 @@
 ---
 title: golang TDD 도입기
 category: backend
-tags: [golang, ginkgo]
+tags:
+	- golang
+	- ginkgo
 date: 2023-03-31
 ---
 

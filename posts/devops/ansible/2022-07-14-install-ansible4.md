@@ -1,7 +1,9 @@
 ---
 title: Ansible - awx사용법
 category: devops
-tags: [ansible, awx]
+tags:
+  - ansible
+  - awx
 date: 2022-07-14
 ---
 

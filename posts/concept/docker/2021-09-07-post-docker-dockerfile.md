@@ -1,7 +1,9 @@
 ---
 title: 도커(2) - Dockerfile
 category: concept
-tags: [docker, dockerfile]
+tags:
+  - docker
+  - dockerfile
 date: 2021-09-07
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: docker remote로 연결하기
 category: devops
-tags: [kubernetes]
+tags:
+  - kubernetes
 date: 2023-03-14
 ---
 

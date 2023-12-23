@@ -1,7 +1,10 @@
 ---
 title: Github credly 연동하기
 category: tip
-tags: [github, badge, credly]
+tags:
+  - github
+  - badge
+  - credly
 date: 2023-02-06
 ---
 

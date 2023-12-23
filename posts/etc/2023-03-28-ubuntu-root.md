@@ -1,7 +1,8 @@
 ---
 title: ubuntu root 사용법
 category: etc
-tags: [ubuntu]
+tags:
+  - ubuntu
 date: 2023-02-06
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: kubernetes 'cannot allocate memory' 이슈
 category: devops
-tags: [kubernetes, docker]
+tags:
+  - kubernetes
+  - docker
 date: 2022-02-13
 ---
 

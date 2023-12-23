@@ -1,7 +1,8 @@
 ---
 title: xenserver 디스크 확장
 category: devops
-tags: [xenserver]
+tags:
+  - xenserver
 date: 2021-12-07
 ---
 

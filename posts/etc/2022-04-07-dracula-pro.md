@@ -1,7 +1,10 @@
 ---
 title: dracula pro 구매 후기
 category: etc
-tags: [vscode, dracula pro, theme]
+tags:
+  - vscode
+  - dracula pro
+  - theme
 date: 2022-04-07
 ---
 

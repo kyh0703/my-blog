@@ -1,7 +1,9 @@
 ---
 title: CKA 자격증 따기 - day6
 category: certificate
-tags: [cka, kubernetes]
+tags:
+  - cka
+  - kubernetes
 date: 2022-04-19
 ---
 

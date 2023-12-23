@@ -1,7 +1,8 @@
 ---
 title: prometheus - promql
 category: devops
-tags: [prometheus]
+tags:
+  - prometheus
 date: 2023-04-23
 ---
 

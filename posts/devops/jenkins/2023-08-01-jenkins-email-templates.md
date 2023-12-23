@@ -1,7 +1,8 @@
 ---
 title: jenkins - email-template
 category: devops
-tags: [jenkins]
+tags:
+  - jenkins
 date: 2023-08-01
 ---
 

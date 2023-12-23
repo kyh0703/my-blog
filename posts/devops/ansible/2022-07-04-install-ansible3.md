@@ -1,7 +1,8 @@
 ---
 title: Ansible - connection & delegate-to
 category: devops
-tags: [ansible]
+tags:
+  - ansible
 date: 2022-07-04
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: 도커(5) - docker-compose
 category: concept
-tags: [docker]
+tags:
+  - docker
 date: 2021-09-15
 ---
 

@@ -1,7 +1,11 @@
 ---
 title: 리눅스 /home삭제 /root용량 늘리기
 category: devops
-tags: [lvm, home, disk, storage]
+tags:
+  - lvm
+  - home
+  - disk
+  - storage
 date: 2021-12-09
 ---
 

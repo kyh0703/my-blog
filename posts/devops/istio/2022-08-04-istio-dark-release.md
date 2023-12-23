@@ -1,7 +1,8 @@
 ---
 title: istio - Dark Release
 category: devops
-tags: [istio]
+tags:
+  - istio
 date: 2022-08-03
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: react - useform
 category: frontend
-tags: [react, useform]
+tags:
+  - react
+  - useform
 date: 2022-10-26
 ---
 

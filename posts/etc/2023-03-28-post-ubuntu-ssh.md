@@ -1,7 +1,8 @@
 ---
 title: ubuntu ssh 접속이 안될 때
 category: etc
-tags: [ubuntu]
+tags:
+  - ubuntu
 date: 2023-02-06
 ---
 

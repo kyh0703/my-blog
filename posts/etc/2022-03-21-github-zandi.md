@@ -1,7 +1,8 @@
 ---
 title: github 잔디가 보이지 않을 때
 category: etc
-tags: [github]
+tags:
+  - github
 date: 2022-03-21
 ---
 

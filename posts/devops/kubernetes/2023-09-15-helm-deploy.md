@@ -1,7 +1,9 @@
 ---
 title: helm CI/CD 배포 전략
 category: devops
-tags: [kubernetes, helm]
+tags:
+  - kubernetes
+  - helm
 date: 2023-09-15
 ---
 

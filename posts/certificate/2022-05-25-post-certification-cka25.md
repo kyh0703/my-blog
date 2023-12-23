@@ -1,7 +1,9 @@
 ---
 title: CKA 자격증 따기 - 시험 후기(v1.23.1)
 category: certificate
-tags: [cka, kubernetes]
+tags:
+  - cka
+  - kubernetes
 date: 2022-05-25
 ---
 

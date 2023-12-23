@@ -1,7 +1,8 @@
 ---
 title: jenkins - controller
 category: devops
-tags: [jenkins]
+tags:
+  - jenkins
 date: 2023-07-27
 ---
 

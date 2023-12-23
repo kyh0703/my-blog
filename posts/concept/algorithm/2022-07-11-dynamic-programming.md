@@ -1,7 +1,9 @@
 ---
 title: 알고리즘 - 동적계획법
 category: concept
-tags: [algorithm, dynamic-programming]
+tags:
+  - algorithm
+  - dynamic-programming
 date: 2022-07-11
 ---
 

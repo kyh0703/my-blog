@@ -1,7 +1,9 @@
 ---
 title: Harbor 설치 방법 (완벽정리)
 category: devops
-tags: [harbor, docker-registry]
+tags:
+  - harbor
+  - docker-registry
 date: 2021-12-02
 ---
 

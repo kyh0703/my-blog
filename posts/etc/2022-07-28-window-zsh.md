@@ -1,7 +1,9 @@
 ---
 title: window zsh 사용하기
 category: etc
-tags: [window, zsh]
+tags:
+  - window
+  - zsh
 date: 2022-07-28
 ---
 

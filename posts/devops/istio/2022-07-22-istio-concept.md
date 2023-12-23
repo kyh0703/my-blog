@@ -1,7 +1,8 @@
 ---
 title: istio - 개념
 category: devops
-tags: [istio]
+tags:
+  - istio
 date: 2022-07-22
 ---
 
