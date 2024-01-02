@@ -17,6 +17,10 @@ import {
   AccountBoxRounded,
   LinkedIn,
   Email,
+  NavigateBefore,
+  NavigateNext,
+  KeyboardDoubleArrowLeft,
+  KeyboardDoubleArrowRight,
 } from '@mui/icons-material'
 import SvgIcon from '@mui/material/SvgIcon'
 import tw, { styled, css, theme } from 'twin.macro'
@@ -93,3 +97,11 @@ export const EmojiPeopleIcon = withIconStyle(EmojiPeople)
 export const AccountBoxRounedIcon = withIconStyle(AccountBoxRounded)
 export const LinkedInIcon = withIconStyle(LinkedIn)
 export const EmailIcon = withIconStyle(Email)
+export const NavigateBeforeIcon = withIconStyle(NavigateBefore)
+export const NavigateNextIcon = withIconStyle(NavigateNext)
+export const KeyboardDoubleArrowLeftIcon = withIconStyle(
+  KeyboardDoubleArrowLeft,
+)
+export const KeyboardDoubleArrowRightIcon = withIconStyle(
+  KeyboardDoubleArrowRight,
+)

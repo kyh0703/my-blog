@@ -23,6 +23,7 @@ const PostCard = (post: Post) => {
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
       <Markdown content={post.body.raw} />
+      <div>post url {post.url}</div>
     </div>
   )
 }

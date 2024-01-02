@@ -13,6 +13,10 @@ import {
   AccountBoxRounedIcon,
   LinkedInIcon,
   EmailIcon,
+  NavigateBeforeIcon,
+  NavigateNextIcon,
+  KeyboardDoubleArrowLeftIcon,
+  KeyboardDoubleArrowRightIcon,
 } from '.'
 
 const meta: Meta<typeof SearchIcon> = {
@@ -69,6 +73,10 @@ export const Normal: Story = {
       <AccountBoxRounedIcon {...args} />
       <LinkedInIcon {...args} />
       <EmailIcon {...args} />
+      <NavigateBeforeIcon {...args} />
+      <NavigateNextIcon {...args} />
+      <KeyboardDoubleArrowLeftIcon {...args} />
+      <KeyboardDoubleArrowRightIcon {...args} />
     </>
   ),
 }
