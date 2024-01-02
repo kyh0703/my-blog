@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import remarkGfm from 'remark-gfm'
@@ -27,6 +28,14 @@ const Markdown = ({ content }: MarkdownProps) => {
             </code>
           )
         },
+        img: (image) => (
+          <Image
+            src={image.src || ''}
+            alt={image.alt || ''}
+            width={500}
+            height={350}
+          />
+        ),
       }}
     >
       {content}

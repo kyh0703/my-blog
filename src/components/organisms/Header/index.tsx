@@ -32,7 +32,7 @@ const Header = () => {
               <AppLogo />
             </Link>
           </NavLink>
-          <NavLink>Blog</NavLink>
+          <NavLink>blog</NavLink>
           <NavLink>category</NavLink>
         </Nav>
         <Nav>
