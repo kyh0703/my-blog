@@ -1,3 +1,3 @@
-export default function PostBackendPage() {
-  return <div>post backend page</div>
+export default function Page({ params }: { params: { slug: string } }) {
+  return <div>My Post: {params.slug}</div>
 }
