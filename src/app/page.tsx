@@ -1,9 +1,6 @@
-'use client'
-
 import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
 import tw from 'twin.macro'
-
 import { allPosts, Post } from 'contentlayer/generated'
 import Markdown from '@/components/atoms/Markdown'
 

@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import tw, { styled, css } from 'twin.macro'
 
