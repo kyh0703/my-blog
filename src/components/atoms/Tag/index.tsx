@@ -1,3 +1,5 @@
+'use client'
+
 import tw, { styled, css, theme } from 'twin.macro'
 
 const TagWrapper = styled.div<{

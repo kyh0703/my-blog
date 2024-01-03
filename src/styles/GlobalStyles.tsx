@@ -1,10 +1,8 @@
-'use client'
-
 import React from 'react'
-import { Global } from '@emotion/react'
+import { createGlobalStyle } from 'styled-components'
 import tw, { css, theme, GlobalStyles as BaseStyles } from 'twin.macro'
 
-const customStyles = css({
+const CustomStyles = createGlobalStyle({
   'html, body, #__next': {
     height: '100%',
     padding: 0,
@@ -38,7 +36,7 @@ const customStyles = css({
 const GlobalStyles = () => (
   <>
     <BaseStyles />
-    <Global styles={customStyles} />
+    <CustomStyles />
   </>
 )
 

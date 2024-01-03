@@ -24,7 +24,7 @@ const CheckBox = (props: CheckBoxProps) => {
     (e: React.MouseEvent) => {
       e.preventDefault()
       ref.current?.click()
-      SetIsChecked(isChecked => !isChecked)
+      SetIsChecked((isChecked) => !isChecked)
     },
     [ref, SetIsChecked],
   )

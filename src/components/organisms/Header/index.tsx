@@ -11,9 +11,9 @@ import {
 import AppLogo from '@/components/atoms/AppLogo'
 import Clock from '@/components/atoms/Clock'
 
-const HeaderRoot = styled.header([tw`h-[56px] border-none`])
+const HeaderRoot = styled.header(tw`h-[56px] border-none`)
 
-const Nav = styled.div([
+const Nav = styled.div(() => [
   tw`flex h-[56px] items-center text-base`,
   css`
     & > *:not(:first-child) {
@@ -22,7 +22,7 @@ const Nav = styled.div([
   `,
 ])
 
-const NavLink = styled.span([tw`inline pr-2 text-xl cursor-pointer`])
+const NavLink = styled.span(tw`inline pr-2 text-xl cursor-pointer`)
 
 const Header = () => {
   return (

@@ -1,3 +1,5 @@
+'use client'
+
 import tw, { styled, css } from 'twin.macro'
 
 type SeparatorProps = {

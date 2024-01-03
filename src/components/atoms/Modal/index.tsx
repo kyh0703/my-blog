@@ -1,6 +1,8 @@
+'use client'
+
 import tw, { styled, css, theme } from 'twin.macro'
 
-const FullScreen = styled.div([
+const FullScreen = styled.div(() => [
   tw`fixed z-30 top-0 left-0 w-full h-full`,
   tw`flex justify-center items-center`,
   css`

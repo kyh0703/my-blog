@@ -1,3 +1,5 @@
+'use client'
+
 import tw, { styled, css } from 'twin.macro'
 
 export type ButtonVaraints = 'primary' | 'secondary' | 'danger'

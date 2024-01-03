@@ -4,7 +4,7 @@ import tw, { styled, css } from 'twin.macro'
 import Dropzone from '../Dropzone'
 import ImagePreview from '../ImagePreview'
 
-const InputImagesContainer = styled.div([
+const InputImagesContainer = styled.div(() => [
   tw`flex flex-col`,
 
   css`
@@ -90,7 +90,7 @@ const InputImages = ({
 
   return (
     <InputImagesContainer>
-      {images &&
+      {/* {images &&
         images.map((image, index) => {
           return (
             <ImagePreview
@@ -101,7 +101,7 @@ const InputImages = ({
               onRemove={onRemove}
             />
           )
-        })}
+        })} */}
       <div style={{ display: isDropzoneDisplay }}>
         <Dropzone
           acceptedFileTypes={[

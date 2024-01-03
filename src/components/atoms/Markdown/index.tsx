@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
@@ -28,14 +30,6 @@ const Markdown = ({ content }: MarkdownProps) => {
             </code>
           )
         },
-        img: (image) => (
-          <Image
-            src={image.src || ''}
-            alt={image.alt || ''}
-            width={500}
-            height={350}
-          />
-        ),
       }}
     >
       {content}

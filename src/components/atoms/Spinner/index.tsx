@@ -1,3 +1,5 @@
+'use client'
+
 import { styled, css } from 'twin.macro'
 
 const StyledSpinner = styled.svg<{ size: number; isAutoCentering: boolean }>(

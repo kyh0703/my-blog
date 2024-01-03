@@ -56,7 +56,7 @@ type Image = {
 }
 
 export const WithDropzone: Story = {
-  render: args => {
+  render: (args) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [files, setFiles] = useState<File[]>([])
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -76,10 +76,10 @@ export const WithDropzone: Story = {
     }, [files, images])
 
     const handleRemove = (src: string) => {
-      const image = images.find(img => img.src === src)
+      const image = images.find((img) => img.src === src)
       if (image !== undefined) {
-        setImages(images => images.filter(img => img.src !== image.src))
-        setFiles(files => files.filter((file: File) => file !== image.file))
+        setImages((images) => images.filter((img) => img.src !== image.src))
+        setFiles((files) => files.filter((file: File) => file !== image.file))
       }
 
       args && args.onRemove && args.onRemove(src)
@@ -87,7 +87,7 @@ export const WithDropzone: Story = {
 
     return (
       <div tw="w-[288px] grid gap-2.5 grid-cols-1">
-        <Dropzone value={files} onDrop={fileList => setFiles(fileList)} />
+        <Dropzone value={files} onDrop={(fileList) => setFiles(fileList)} />
         {images.map((image, i) => (
           <ImagePreview
             key={i}

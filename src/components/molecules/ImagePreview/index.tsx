@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image'
 import tw, { styled, css } from 'twin.macro'
 
 import { CloseIcon } from '@/components/atoms/Icon'
@@ -14,13 +13,14 @@ const ImagePreviewContainer = styled.div<{ height?: string; width?: string }>(
   ],
 )
 
-const CloseBox = styled.div([
+const CloseBox = styled.div(() => [
   tw`absolute`,
   tw`flex items-center justify-center`,
   tw`top-0 right-0 w-[30px] h-[30px] cursor-pointer rounded-r-lg`,
 ])
 
 type ImagePreviewProps = {
+  key?: number
   /**
    * 이미지 URL
    */
@@ -44,6 +44,7 @@ type ImagePreviewProps = {
 }
 
 const ImagePreview = ({
+  key,
   src,
   alt,
   height,

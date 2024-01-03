@@ -1,4 +1,7 @@
+'use client'
+
 import GlobalStyles from '@/styles/GlobalStyles'
+import StyledComponentsRegistry from '@/lib/registry'
 import Layout from '@/components/templates/Layout'
 
 export default function RootLayout({
@@ -12,8 +15,10 @@ export default function RootLayout({
         <title>Contentlayer Next.js Example</title>
       </head>
       <body>
-        <GlobalStyles />
-        <Layout>{children}</Layout>
+        <StyledComponentsRegistry>
+          <GlobalStyles />
+          <Layout>{children}</Layout>
+        </StyledComponentsRegistry>
       </body>
     </html>
   )

@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-
 import tw, { styled, css, theme } from 'twin.macro'
 
 const StyleClock = styled.span<{ color?: string }>(({ color }) => [
@@ -20,6 +19,7 @@ const Clock = ({ color }: ClocckProps) => {
   const [time, setTime] = useState(new Date())
 
   useEffect(() => {
+    'use client'
     const id = setInterval(() => {
       setTime(new Date())
     }, 1000)

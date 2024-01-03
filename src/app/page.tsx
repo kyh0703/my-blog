@@ -1,6 +1,7 @@
+'use client'
+
 import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
-import tw from 'twin.macro'
 import { allPosts, Post } from 'contentlayer/generated'
 import Markdown from '@/components/atoms/Markdown'
 
@@ -34,7 +35,8 @@ export default function Home() {
     <div tw="max-w-xl py-8 mx-auto">
       <h1 tw="text-4xl font-bold text-center">블로그</h1>
       {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
+        // eslint-disable-next-line react/jsx-key
+        <PostCard {...post} />
       ))}
     </div>
   )

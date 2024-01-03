@@ -1,18 +1,31 @@
-import "twin.macro";
-import { css as cssImport } from "@emotion/react";
-import styledImport from "@emotion/styled";
-import { CSSInterpolation } from "@mui/material";
+import 'twin.macro'
+import styledImport, { CSSProp, css as cssImport } from 'styled-components'
+import { CSSInterpolation } from '@mui/material'
 
-declare module "twin.macro" {
+declare module 'twin.macro' {
   // The styled and css imports
-  const styled: typeof styledImport;
-  const css: typeof cssImport;
+  const styled: typeof styledImport
+  const css: typeof cssImport
 }
 
-declare module "react" {
-  // The tw and css prop
-  interface DOMAttributes<T> {
-    tw?: string;
-    css?: CSSInterpolation;
+declare module 'react' {
+  // The css prop
+  interface HTMLAttributes<T> extends DOMAttributes<T> {
+    css?: CSSProp
+    tw?: string
+  }
+  // The inline svg css prop
+  interface SVGProps<T> extends SVGProps<SVGSVGElement> {
+    css?: CSSProp
+    tw?: string
+  }
+}
+
+// The 'as' prop on styled components
+declare global {
+  namespace JSX {
+    interface IntrinsicAttributes<T> extends DOMAttributes<T> {
+      as?: string | Element
+    }
   }
 }

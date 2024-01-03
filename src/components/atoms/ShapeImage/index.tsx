@@ -1,5 +1,7 @@
+'use client'
+
 import Image, { ImageProps } from 'next/image'
-import tw, { styled, css } from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
 type ImageShape = 'circle' | 'square'
 type ShapeImageProps = ImageProps & { shape?: ImageShape }

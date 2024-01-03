@@ -1,3 +1,5 @@
+'use client'
+
 import tw, { styled, css } from 'twin.macro'
 
 const BadgeWrapper = styled.div<{ backgroundColor: string }>(

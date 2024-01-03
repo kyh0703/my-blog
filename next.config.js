@@ -4,9 +4,6 @@ const { withContentlayer } = require('next-contentlayer')
 /** @type {import('next').NextConfig} */
 const nextConfig = withTwin(
   withContentlayer({
-    // static page
-    output: 'export',
-
     trailingSlash: true,
     // Configure 'pageExtensions' to include MDX files
     pageExtensions: ['js', 'jsx', 'mdx', 'tx', 'tsx'],

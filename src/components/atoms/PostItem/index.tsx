@@ -1,3 +1,5 @@
+'use client'
+
 import { Post } from 'contentlayer/generated'
 import tw, { styled, css, theme } from 'twin.macro'
 
