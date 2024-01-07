@@ -8,7 +8,7 @@ type SeparatorProps = {
 
 const getMargin = ({ children }: SeparatorProps) => (children ? '.50em' : '0')
 
-const SeparatorWrap = styled.div<SeparatorProps>(({ children }) => [
+const SeparatorWrap = styled.div(({ children }: SeparatorProps) => [
   tw`h-6 flex items-center text-[#e5e7eb]`,
   css`
     &::before,

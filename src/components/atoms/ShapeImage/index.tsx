@@ -6,7 +6,7 @@ import tw, { styled } from 'twin.macro'
 type ImageShape = 'circle' | 'square'
 type ShapeImageProps = ImageProps & { shape?: ImageShape }
 
-const ImageWithShape = styled(Image)<{ shape?: ImageShape }>(({ shape }) => [
+const ImageWithShape = styled(Image)(({ shape }: { shape?: ImageShape }) => [
   shape === 'circle' ? tw`rounded-full` : tw`rounded-none`,
 ])
 

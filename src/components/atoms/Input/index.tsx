@@ -8,7 +8,7 @@ type InputProps = {
   hasBorder?: boolean
 }
 
-const Input = styled.input<InputProps>(({ hasError, hasBorder }) => [
+const Input = styled.input(({ hasError, hasBorder }: InputProps) => [
   tw`border-none`,
   tw`box-border pt-3 pr-3 pb-3 pl-2`,
   tw`w-full h-10 leading-5`,

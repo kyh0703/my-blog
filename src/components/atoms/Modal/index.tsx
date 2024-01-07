@@ -6,14 +6,11 @@ const FullScreen = styled.div(() => [
   tw`fixed z-30 top-0 left-0 w-full h-full`,
   tw`flex justify-center items-center`,
   css`
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.4);
   `,
 ])
 
-const Modalcontainer = styled.div<{
-  width: string
-  backgroundColor?: string
-}>(({ width, backgroundColor }) => [
+const Modalcontainer = styled.div(({ width, backgroundColor }: ModalProps) => [
   tw`flex flex-col justify-center items-center`,
   tw`p-6 rounded shadow-lg`,
 
